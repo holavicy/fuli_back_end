@@ -67,12 +67,18 @@ class GoodsStatusHandler(BaseHandler):
         status = data['status']
         staff_no = data['staffNo']
 
+        # response_flag: 1.属于某个礼包 2.下架成功 3 下架失败
         response_flag = GoodsModel.edit_goods_status(goods_id, status, staff_no)
+        print(response_flag)
 
-        if response_flag:
+        if response_flag == 1:
+            response['code'] = -1
+            response['errorMsg'] = '商品属于某个礼包，请先将此商品从礼包中移除，再进行操作'
+            self.write(json_encode(response))
+        elif response_flag == 2:
             self.write(json_encode(response))
         else:
-            response['code'] == -1
+            response['code'] = -1
             response['errorMsg'] = '更新失败，数据库错误，请联系管理员'
             self.write(json_encode(response))
 
@@ -99,7 +105,7 @@ class GoodsHandler(BaseHandler):
         if response_flag:
             self.write(json_encode(response))
         else:
-            response['code'] == -1
+            response['code'] = -1
             response['errorMsg'] = '更新失败，数据库错误，请联系管理员'
             self.write(json_encode(response))
 
@@ -155,6 +161,54 @@ class GoodsStockHandler(BaseHandler):
         if response_flag:
             self.write(json_encode(response))
         else:
-            response['code'] == -1
+            response['code'] = -1
+            response['errorMsg'] = '修改库存失败，数据库错误，请联系管理员'
+            self.write(json_encode(response))
+
+
+class GoodsStockDeleteHandler(BaseHandler):
+
+    def post(self):
+        data = tornado.escape.json_decode(self.request.body)
+        response = {
+            'code': 0,
+            'data': '',
+            'errorMsg': ''
+        }
+
+        stock_id = data['id']
+        create_by = data['staffNo']
+
+        response_flag = GoodsModel.delete_stock_detail(stock_id, create_by)
+
+        if response_flag:
+            self.write(json_encode(response))
+        else:
+            response['code'] = -1
+            response['errorMsg'] = '修改库存失败，数据库错误，请联系管理员'
+            self.write(json_encode(response))
+
+
+class GoodsStockUpdateHandler(BaseHandler):
+    def post(self):
+        data = tornado.escape.json_decode(self.request.body)
+        response = {
+            'code': 0,
+            'data': '',
+            'errorMsg': ''
+        }
+
+        stock_id = data['stockId']
+        change_type = data['changeType']
+        num = data['num']
+        desc = data['desc']
+        create_by = data['staffNo']
+
+        response_flag = GoodsModel.update_stock_detail(change_type, num, desc, stock_id, create_by)
+
+        if response_flag:
+            self.write(json_encode(response))
+        else:
+            response['code'] = -1
             response['errorMsg'] = '修改库存失败，数据库错误，请联系管理员'
             self.write(json_encode(response))

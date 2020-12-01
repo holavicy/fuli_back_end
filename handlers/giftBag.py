@@ -22,8 +22,12 @@ class GiftBagListHandler(BaseHandler):
         }
 
         total_num, df_records = GiftBagModel.get_all(page, page_size, gift_name, gooods_name, gift_status)
+        if isinstance(total_num, int):
+            total_num = total_num
+        else:
+            total_num = total_num.tolist()
         data = {
-            'count': total_num.tolist(),
+            'count': total_num,
             'list': json.loads(df_records)
         }
         response['data'] = data

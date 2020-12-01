@@ -1,5 +1,7 @@
 import requests
 import urllib.parse
+import hashlib
+import time
 
 
 class DDModel(object):
@@ -35,6 +37,7 @@ class DDModel(object):
             params=dict(access_token=access_token, code=code)
         )
         response = response.json()
+        print(response)
         return response
 
     '''
@@ -52,7 +55,7 @@ class DDModel(object):
         return response
 
     '''
-    发送钉钉工作通知
+    管理员审核通过后钉钉消息通知员工
     param: access_token, agent_id, msg, userid_list
     '''
     @classmethod
@@ -66,15 +69,6 @@ class DDModel(object):
         data = {
             "agent_id": cls.agent_id,
             "userid_list": user_id,
-            # "msg": {
-            #      "msgtype": "action_card",
-            #      "action_card": {
-            #         "title": "您有一个生日礼包可以领取啦【测试，请忽略】",
-            #         "markdown": "管理员已通过您提交的领取生日礼包申请，现在可以前往领取生日礼包，详细可联系福利管理员",
-            #         "single_title": "查看详情",
-            #         "single_url": "dingtalk://dingtalkclient/action/openapp?corpid="+cls.CorpId+"&container_type=work_platform&app_id=0_"+cls.agent_id+"&redirect_type=jump&redirect_url="+target_url
-            #      }
-            # }
             "msg": {
                     "msgtype": "oa",
                     "oa": {
@@ -94,3 +88,87 @@ class DDModel(object):
         res = requests.post(url=url, headers=HEADERS, json=data)
         print(res.text)
         return res.text
+
+    '''
+    设置代领后钉钉消息通知代领人
+    '''
+    @classmethod
+    def send_supply_message(cls, user_id, msg):
+        access_token = cls.get_access_token()
+
+        url = cls.url + '/topapi/message/corpconversation/asyncsend_v2?access_token=' + access_token
+        HEADERS = {'Content-Type': 'application/json'}
+        target_url = urllib.parse.quote('http://127.0.0.1:8080/#/')
+        data = {
+            "agent_id": cls.agent_id,
+            "userid_list": user_id,
+            "msg": {
+                "msgtype": "oa",
+                "oa": {
+                    "message_url": "eapp://pages/index/index",
+                    "pc_message_url": "dingtalk://dingtalkclient/action/openapp?corpid=" + cls.CorpId + "&container_type=work_platform&app_id=0_" + cls.agent_id + "&redirect_type=jump&redirect_url=" + target_url,
+                    "head": {
+                        "bgcolor": "FFBBBBBB",
+                        "text": "福利管理系统"
+                    },
+                    "body": {
+                        "title": "您有一个代领消息",
+                        "content": msg,
+                    }
+                }
+            }
+        }
+        res = requests.post(url=url, headers=HEADERS, json=data)
+        print(res.text)
+        return res.text
+
+    '''
+    获取钉钉jsp权鉴数据
+    param: request'''
+    @classmethod
+    def get_config(cls, url):
+        timestamp = str(int(round(time.time()))) + '000'
+        nonce_str = 'abcdefg'
+        signed_url = url
+        access_token = cls.get_access_token()
+        print('access_token')
+        print(access_token)
+        ticket = cls.get_js_api_ticket(access_token)
+        print('ticket')
+        print(ticket)
+        signature = cls.sign(ticket, nonce_str, timestamp, signed_url)
+        print('signature')
+        print(signature)
+        data = {
+            "jsticket": ticket,
+            "signature": signature,
+            "nonceStr": nonce_str,
+            "timeStamp": timestamp,
+            "corpId": cls.CorpId,
+            "agentId": cls.agent_id
+        }
+        return data
+
+    '''
+    获取jsapi_ticket
+    param: access_token
+    '''
+    @classmethod
+    def get_js_api_ticket(cls, access_token):
+        response = requests.get(
+            url=cls.url + "/get_jsapi_ticket",
+            params=dict(access_token=access_token)
+        )
+        ticket = response.json()["ticket"]
+        return ticket
+
+    '''
+    获取sign
+    param: ticket, nonce_str, time_stamp, signed_url
+    '''
+    @classmethod
+    def sign(cls, ticket, nonce_str, time_stamp, signed_url):
+        plain_tex = "jsapi_ticket=" + ticket + "&noncestr=" + nonce_str + "&timestamp=" + time_stamp + "&url=" + signed_url
+        print(plain_tex)
+        signature = hashlib.sha1(plain_tex.encode('utf8'))
+        return signature.hexdigest()
