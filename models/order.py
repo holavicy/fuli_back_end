@@ -1,6 +1,6 @@
 import pymssql
 import pandas as pd
-from common.tool import get_now
+from common.tool import get_now, format_sql_values
 
 
 class OrderModel(object):
@@ -26,6 +26,7 @@ class OrderModel(object):
     # 创建订单
     @classmethod
     def create_order(cls, info):
+        print('create order')
         try:
             has_got_gift = cls.has_got_gift(info['staffNo'], info['year'])
 
@@ -45,22 +46,14 @@ class OrderModel(object):
                     'staff_name': info['staffName'],
                 }
                 base_sql_order = 'insert into [order] ({}) values ({})'
-                sql_item_order = []
-                sql_values_order = []
-
-                for key in data:
-                    sql_item_order.append(key)
-                    if isinstance(data[key], str):  # 如果是字符串 加上引号
-                        sql_values_order.append("\'" + data[key] + "\'")
-                    else:
-                        sql_values_order.append(data[key])
-
+                sql_item_order, sql_values_order = format_sql_values(data)
                 sql_insert_order = base_sql_order.format(','.join(sql_item_order), ','.join(list(map(str, sql_values_order))))
 
                 cursor.execute(sql_insert_order)
 
                 # 获取order.id
                 order_id = cursor.lastrowid
+                print(order_id)
 
                 # order_goods表中创建记录
                 goods_list = info['goods']
@@ -71,7 +64,8 @@ class OrderModel(object):
                         'goods_name': goods['name'],
                         'goods_image_url': goods['imageUrl'],
                         'goods_unit': goods['unit'],
-                        'goods_price': goods['price']
+                        'goods_price': goods['price'],
+                        'goods_is_must': goods['is_must']
                     }
 
                     stock_info = {
@@ -83,30 +77,38 @@ class OrderModel(object):
                     }
 
                     base_sql_relation = 'insert into dbo.order_goods ({}) values ({})'
-                    base_sql_stock = 'insert into dbo.goods_stock_change_detail ({}) values ({})'
-                    sql_item_relation = []
-                    sql_values_relation = []
-                    sql_item_stock = []
-                    sql_values_stock = []
-
-                    for key in relation_info:
-                        sql_item_relation.append(key)
-                        if isinstance(relation_info[key], str):  # 如果是字符串 加上引号
-                            sql_values_relation.append("\'" + relation_info[key] + "\'")
-                        else:
-                            sql_values_relation.append(relation_info[key])
-
+                    sql_item_relation, sql_values_relation = format_sql_values(relation_info)
                     sql_relation = base_sql_relation.format(','.join(sql_item_relation),
                                                             ','.join(list(map(str, sql_values_relation))))
+                    print('sql_relation')
+                    print('sql_relation')
                     cursor.execute(sql_relation)
                     # goods_stock_change_detial表中创建记录
-                    for key in stock_info:
-                        sql_item_stock.append(key)
-                        if isinstance(stock_info[key], str):  # 如果是字符串 加上引号
-                            sql_values_stock.append("\'" + stock_info[key] + "\'")
-                        else:
-                            sql_values_stock.append(stock_info[key])
 
+                    # 根据先入先出原则，计算此出库商品对应的价格
+                    goods_id = goods['id']
+                    # 获取某个商品的入库记录
+                    sql = "SELECT gscd.goods_id, gscd.change_type, gscd.num, gscd.create_time, gscd.price, ISNULL(a.allOut, 0) allOut FROM goods_stock_change_detail gscd LEFT JOIN( SELECT gscd.goods_id, SUM(gscd.num) as allOut FROM goods_stock_change_detail gscd WHERE gscd.status != 2 AND gscd.change_type = 2 GROUP BY gscd.goods_id) a ON gscd.goods_id = a.goods_id WHERE gscd.status != 2 AND gscd.change_type = 1 AND gscd.goods_id = '%s' ORDER BY gscd.create_time" % (
+                        goods_id)
+                    df_sql = pd.read_sql(sql, con=cls.conn_ss)
+                    all_in_num = 0
+                    for goodsIndex, goodsItem in df_sql.iterrows():
+                        print('loop')
+                        print(goodsItem)
+                        # 根据入库时间正序排序，计算每一条入库记录之前的商品总入库数
+                        all_in_num = all_in_num + goodsItem[2]
+                        all_out_num = goodsItem[5]
+                        # 若用出库小于总入库，则说明此条入库记录要对应出库记录
+                        if int(all_out_num) < int(all_in_num):
+                            price = 0
+                            if goodsItem[4] is not None:
+                                print('212121')
+                                price = goodsItem[4]
+
+                            stock_info['price'] = price
+                    print(stock_info)
+                    base_sql_stock = 'insert into dbo.goods_stock_change_detail ({}) values ({})'
+                    sql_item_stock, sql_values_stock = format_sql_values(stock_info)
                     sql_stock = base_sql_stock.format(','.join(sql_item_stock),
                                                             ','.join(list(map(str, sql_values_stock))))
                     cursor.execute(sql_stock)
@@ -130,7 +132,7 @@ class OrderModel(object):
         creator_name_sql = ''
 
         if order_status:
-            status_sql = 'status=' + order_status
+            status_sql = 'status in(' + order_status + ')'
         else:
             status_sql = 'status>0'
 
@@ -210,6 +212,7 @@ class OrderModel(object):
                 update_sql = "update [order] set status = '%d', finished_by = '%s', finish_by_name = '%s', finish_time = '%s' where id = '%s'" % (status, staff_no, staff_name, now, order_id)
             cursor.execute(update_sql)
             cls.conn_ss.commit()
+            cursor.close()
             return True
         except Exception as e:
             print(e)

@@ -147,6 +147,7 @@ class GoodsStockHandler(BaseHandler):
         num = data['num']
         change_des = data['desc']
         create_by = data['staffNo']
+        price = data['price']
 
         info = {
             'goods_id': goods_id,
@@ -154,6 +155,7 @@ class GoodsStockHandler(BaseHandler):
             'num': num,
             'change_des': change_des,
             'create_by': create_by,
+            'price': price
         }
 
         response_flag = GoodsModel.add_stock_detail(info)
@@ -181,7 +183,11 @@ class GoodsStockDeleteHandler(BaseHandler):
 
         response_flag = GoodsModel.delete_stock_detail(stock_id, create_by)
 
-        if response_flag:
+        if response_flag == 2:
+            self.write(json_encode(response))
+        elif response_flag == 1:
+            response['code'] = -1
+            response['errorMsg'] = '商品的入库数不得小于商品的出库数，请检查后再操作'
             self.write(json_encode(response))
         else:
             response['code'] = -1
@@ -203,10 +209,16 @@ class GoodsStockUpdateHandler(BaseHandler):
         num = data['num']
         desc = data['desc']
         create_by = data['staffNo']
+        price = data['price']
+        goods_id = data['goodsId']
 
-        response_flag = GoodsModel.update_stock_detail(change_type, num, desc, stock_id, create_by)
+        response_flag = GoodsModel.update_stock_detail(change_type, num, desc, stock_id, create_by, price, goods_id)
 
-        if response_flag:
+        if response_flag == 2:
+            self.write(json_encode(response))
+        elif response_flag == 1:
+            response['code'] = -1
+            response['errorMsg'] = '商品的入库数不得小于商品的出库数，请检查后再操作'
             self.write(json_encode(response))
         else:
             response['code'] = -1

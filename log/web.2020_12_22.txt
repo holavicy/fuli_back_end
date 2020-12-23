@@ -1,0 +1,352 @@
+2020-12-22 13:42:29,028 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 13:42:34 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 13, in get_today_birth_user_id_list
+    user_list = TaskModel.get_user_list()
+AttributeError: type object 'TaskModel' has no attribute 'get_user_list'
+2020-12-22 13:42:34,028 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 13:42:39 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 13, in get_today_birth_user_id_list
+    user_list = TaskModel.get_user_list()
+AttributeError: type object 'TaskModel' has no attribute 'get_user_list'
+2020-12-22 13:42:39,027 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 13:42:44 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 13, in get_today_birth_user_id_list
+    user_list = TaskModel.get_user_list()
+AttributeError: type object 'TaskModel' has no attribute 'get_user_list'
+2020-12-22 13:42:44,025 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 13:42:49 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 13, in get_today_birth_user_id_list
+    user_list = TaskModel.get_user_list()
+AttributeError: type object 'TaskModel' has no attribute 'get_user_list'
+2020-12-22 13:42:49,017 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 13:42:54 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 13, in get_today_birth_user_id_list
+    user_list = TaskModel.get_user_list()
+AttributeError: type object 'TaskModel' has no attribute 'get_user_list'
+2020-12-22 13:42:54,023 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 13:42:59 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 13, in get_today_birth_user_id_list
+    user_list = TaskModel.get_user_list()
+AttributeError: type object 'TaskModel' has no attribute 'get_user_list'
+2020-12-22 13:42:59,029 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 13:43:04 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 13, in get_today_birth_user_id_list
+    user_list = TaskModel.get_user_list()
+AttributeError: type object 'TaskModel' has no attribute 'get_user_list'
+2020-12-22 13:43:04,028 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 13:43:09 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 13, in get_today_birth_user_id_list
+    user_list = TaskModel.get_user_list()
+AttributeError: type object 'TaskModel' has no attribute 'get_user_list'
+2020-12-22 13:43:09,024 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 13:43:14 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 13, in get_today_birth_user_id_list
+    user_list = TaskModel.get_user_list()
+AttributeError: type object 'TaskModel' has no attribute 'get_user_list'
+2020-12-22 13:43:14,023 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 13:43:19 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 13, in get_today_birth_user_id_list
+    user_list = TaskModel.get_user_list()
+AttributeError: type object 'TaskModel' has no attribute 'get_user_list'
+2020-12-22 13:43:19,027 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 13:43:24 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 13, in get_today_birth_user_id_list
+    user_list = TaskModel.get_user_list()
+AttributeError: type object 'TaskModel' has no attribute 'get_user_list'
+2020-12-22 13:43:24,027 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 13:43:29 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 13, in get_today_birth_user_id_list
+    user_list = TaskModel.get_user_list()
+AttributeError: type object 'TaskModel' has no attribute 'get_user_list'
+2020-12-22 13:43:29,022 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 13:43:34 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 13, in get_today_birth_user_id_list
+    user_list = TaskModel.get_user_list()
+AttributeError: type object 'TaskModel' has no attribute 'get_user_list'
+2020-12-22 13:43:34,018 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 13:43:39 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 13, in get_today_birth_user_id_list
+    user_list = TaskModel.get_user_list()
+AttributeError: type object 'TaskModel' has no attribute 'get_user_list'
+2020-12-22 13:45:25,671 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 13:45:30 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 13, in get_today_birth_user_id_list
+    user_list = TaskModel.get_user_list()
+AttributeError: type object 'TaskModel' has no attribute 'get_user_list'
+2020-12-22 13:45:30,666 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 13:45:35 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 13, in get_today_birth_user_id_list
+    user_list = TaskModel.get_user_list()
+AttributeError: type object 'TaskModel' has no attribute 'get_user_list'
+2020-12-22 13:45:35,667 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 13:45:40 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 13, in get_today_birth_user_id_list
+    user_list = TaskModel.get_user_list()
+AttributeError: type object 'TaskModel' has no attribute 'get_user_list'
+2020-12-22 14:14:58,004 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 14:15:02 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 16, in get_today_birth_user_id_list
+    for index, user in user_list:
+ValueError: not enough values to unpack (expected 2, got 1)
+2020-12-22 14:15:02,841 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 14:15:07 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 16, in get_today_birth_user_id_list
+    for index, user in user_list:
+ValueError: not enough values to unpack (expected 2, got 1)
+2020-12-22 14:15:07,826 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 14:15:12 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 16, in get_today_birth_user_id_list
+    for index, user in user_list:
+ValueError: not enough values to unpack (expected 2, got 1)
+2020-12-22 14:15:12,837 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 14:15:17 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 16, in get_today_birth_user_id_list
+    for index, user in user_list:
+ValueError: not enough values to unpack (expected 2, got 1)
+2020-12-22 14:15:17,835 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 14:15:22 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 16, in get_today_birth_user_id_list
+    for index, user in user_list:
+ValueError: not enough values to unpack (expected 2, got 1)
+2020-12-22 14:16:26,379 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_today_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 14:16:31 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 16, in get_today_birth_user_id_list
+    print(user['CODE'])
+TypeError: string indices must be integers
+2020-12-22 14:41:10,020 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 14:41:14 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 15, in get_next_week_birth_user_id_list
+    user_list = json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+2020-12-22 14:41:14,998 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 14:41:19 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 15, in get_next_week_birth_user_id_list
+    user_list = json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+2020-12-22 15:39:27,820 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 15:39:32 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 15, in get_next_week_birth_user_id_list
+    user_list = json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+2020-12-22 15:42:05,271 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 15:42:10 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 15, in get_next_week_birth_user_id_list
+    user_list = json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+2020-12-22 15:42:10,272 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 15:42:15 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 15, in get_next_week_birth_user_id_list
+    user_list = json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+2020-12-22 15:42:39,738 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 15:42:44 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 15, in get_next_week_birth_user_id_list
+    user_list = json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+2020-12-22 15:42:44,742 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 15:42:49 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 15, in get_next_week_birth_user_id_list
+    user_list = json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+2020-12-22 15:45:00,365 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 15:45:05 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 15, in get_next_week_birth_user_id_list
+    user_list = json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+2020-12-22 15:52:41,209 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 15:52:46 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 15, in get_next_week_birth_user_id_list
+    user_list = json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+2020-12-22 15:52:46,042 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 15:52:51 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 15, in get_next_week_birth_user_id_list
+    user_list = json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+2020-12-22 15:55:02,124 - apscheduler.scheduler - WARNING - Execution of job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 15:55:02 CST)" skipped: maximum number of running instances reached (1)
+2020-12-22 16:41:01,192 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_un_finish_user_list (trigger: interval[0:00:05], next run at: 2020-12-22 16:41:01 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 55, in get_un_finish_user_list
+    if is_others == '是':
+NameError: name 'is_others' is not defined
+2020-12-22 16:41:05,835 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_un_finish_user_list (trigger: interval[0:00:05], next run at: 2020-12-22 16:41:06 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 55, in get_un_finish_user_list
+    if is_others == '是':
+NameError: name 'is_others' is not defined
+2020-12-22 16:41:10,737 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_un_finish_user_list (trigger: interval[0:00:05], next run at: 2020-12-22 16:41:11 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 55, in get_un_finish_user_list
+    if is_others == '是':
+NameError: name 'is_others' is not defined
+2020-12-22 16:45:16,106 - apscheduler.scheduler - WARNING - Execution of job "TaskHandler.get_un_finish_user_list (trigger: interval[0:00:05], next run at: 2020-12-22 16:45:16 CST)" skipped: maximum number of running instances reached (1)
+2020-12-22 16:45:21,103 - apscheduler.scheduler - WARNING - Execution of job "TaskHandler.get_un_finish_user_list (trigger: interval[0:00:05], next run at: 2020-12-22 16:45:21 CST)" skipped: maximum number of running instances reached (1)
+2020-12-22 16:45:22,013 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_un_finish_user_list (trigger: interval[0:00:05], next run at: 2020-12-22 16:45:26 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 56, in get_un_finish_user_list
+    if is_others == '是':
+NameError: name 'is_others' is not defined
+2020-12-22 16:46:58,069 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_un_finish_user_list (trigger: interval[0:00:05], next run at: 2020-12-22 16:46:58 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 56, in get_un_finish_user_list
+    if is_others == '是':
+NameError: name 'is_others' is not defined
+2020-12-22 16:48:09,372 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_un_finish_user_list (trigger: interval[0:00:15], next run at: 2020-12-22 16:48:19 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 56, in get_un_finish_user_list
+    if is_others == '是':
+NameError: name 'is_others' is not defined
+2020-12-22 16:49:40,295 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_un_finish_user_list (trigger: interval[0:00:15], next run at: 2020-12-22 16:49:50 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 56, in get_un_finish_user_list
+    if is_others == '是':
+NameError: name 'is_others' is not defined
+2020-12-22 16:53:01,498 - apscheduler.scheduler - WARNING - Execution of job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 16:53:01 CST)" skipped: maximum number of running instances reached (1)
+2020-12-22 16:53:06,491 - apscheduler.scheduler - WARNING - Execution of job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 16:53:06 CST)" skipped: maximum number of running instances reached (1)
+2020-12-22 16:53:11,493 - apscheduler.scheduler - WARNING - Execution of job "TaskHandler.get_un_finish_user_list (trigger: interval[0:00:15], next run at: 2020-12-22 16:53:11 CST)" skipped: maximum number of running instances reached (1)
+2020-12-22 16:53:11,495 - apscheduler.scheduler - WARNING - Execution of job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 16:53:11 CST)" skipped: maximum number of running instances reached (1)
+2020-12-22 16:53:16,494 - apscheduler.scheduler - WARNING - Execution of job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 16:53:16 CST)" skipped: maximum number of running instances reached (1)
+2020-12-22 16:53:21,498 - apscheduler.scheduler - WARNING - Execution of job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 16:53:21 CST)" skipped: maximum number of running instances reached (1)
+2020-12-22 16:53:26,495 - apscheduler.scheduler - WARNING - Execution of job "TaskHandler.get_un_finish_user_list (trigger: interval[0:00:15], next run at: 2020-12-22 16:53:26 CST)" skipped: maximum number of running instances reached (1)
+2020-12-22 16:53:26,495 - apscheduler.scheduler - WARNING - Execution of job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 16:53:26 CST)" skipped: maximum number of running instances reached (1)
+2020-12-22 16:53:31,493 - apscheduler.scheduler - WARNING - Execution of job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 16:53:31 CST)" skipped: maximum number of running instances reached (1)
+2020-12-22 16:53:36,504 - apscheduler.scheduler - WARNING - Execution of job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 16:53:36 CST)" skipped: maximum number of running instances reached (1)
+2020-12-22 16:53:41,494 - apscheduler.scheduler - WARNING - Execution of job "TaskHandler.get_un_finish_user_list (trigger: interval[0:00:15], next run at: 2020-12-22 16:53:41 CST)" skipped: maximum number of running instances reached (1)
+2020-12-22 16:53:41,494 - apscheduler.scheduler - WARNING - Execution of job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 16:53:41 CST)" skipped: maximum number of running instances reached (1)
+2020-12-22 16:53:46,492 - apscheduler.scheduler - WARNING - Execution of job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 16:53:46 CST)" skipped: maximum number of running instances reached (1)
+2020-12-22 17:00:59,731 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 17:01:04 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 15, in get_next_week_birth_user_id_list
+    user_list = json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+2020-12-22 17:00:59,731 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_un_finish_user_list (trigger: interval[0:00:14], next run at: 2020-12-22 17:01:12 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 40, in get_un_finish_user_list
+    user_list = json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+2020-12-22 17:01:04,733 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 17:01:09 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 15, in get_next_week_birth_user_id_list
+    user_list = json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+2020-12-22 17:01:09,726 - apscheduler.executors.default - ERROR - Job "TaskHandler.get_next_week_birth_user_id_list (trigger: interval[0:00:05], next run at: 2020-12-22 17:01:14 CST)" raised an exception
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\task.py", line 15, in get_next_week_birth_user_id_list
+    user_list = json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType

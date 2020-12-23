@@ -12,8 +12,9 @@ class GiftBagListHandler(BaseHandler):
         page = self.get_argument('page')
         page_size = self.get_argument('pageSize')
         gift_name = self.get_argument('giftName')
-        gooods_name = self.get_argument('goodsName')
+        goods_name = self.get_argument('goodsName')
         gift_status = self.get_argument('giftStatus')
+        staff_no = self.get_argument('staffNo')
 
         response = {
             'code': 0,
@@ -21,7 +22,7 @@ class GiftBagListHandler(BaseHandler):
             'errorMsg': ''
         }
 
-        total_num, df_records = GiftBagModel.get_all(page, page_size, gift_name, gooods_name, gift_status)
+        total_num, df_records = GiftBagModel.get_all(page, page_size, gift_name, goods_name, gift_status, staff_no)
         if isinstance(total_num, int):
             total_num = total_num
         else:

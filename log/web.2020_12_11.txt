@@ -1,0 +1,2 @@
+2020-12-11 15:52:59,457 - tornado.access - WARNING - 404 GET /favicon.ico (127.0.0.1) 0.00ms
+2020-12-11 15:55:56,464 - tornado.access - WARNING - 404 GET /favicon.ico (172.18.1.46) 1.00ms

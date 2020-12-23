@@ -1,5 +1,6 @@
 import pymssql
 import pandas as pd
+import datetime
 
 
 class SuggestModel(object):
@@ -13,7 +14,6 @@ class SuggestModel(object):
         sql = "SELECT * FROM suggest_dict sd WHERE sd.status = 1"
         df_records = pd.read_sql(sql, con=cls.conn_ss)
         df_records = df_records.to_json(orient='records', date_format='iso', date_unit='s')
-
         return df_records
 
     # 新增员工提交的建议
@@ -39,3 +39,21 @@ class SuggestModel(object):
             print(e)
             cls.conn_ss.rollback()
             return False
+
+    # 根据时间和工号获取意见记录
+    @classmethod
+    def get_suggest_records(cls, staff_no):
+        try:
+            now = datetime.datetime.now()
+            year = now.year
+            print(year)
+            next_year = int(year) + 1
+            start_time = str(year)+'-01-01 00:00:00'
+            end_time = str(next_year) + '-01-01 00:00:00'
+            sql = "SELECT * FROM suggests s WHERE s.staff_no = '%s' AND s.create_time >='%s' AND s.create_time <'%s'" % (staff_no, start_time, end_time)
+            print(sql)
+            df_records = pd.read_sql(sql, con=cls.conn_ss)
+            df_records = df_records.to_json(orient='records', date_format='iso', date_unit='s')
+            return df_records
+        except Exception as e:
+            print(e)

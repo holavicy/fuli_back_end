@@ -1,6 +1,6 @@
 import pymssql
 import pandas as pd
-from common.tool import get_now
+from common.tool import get_now, format_sql_values
 
 
 class GiftBagModel(object):
@@ -14,22 +14,15 @@ class GiftBagModel(object):
             cursor = cls.conn_ss.cursor()
 
             # 向礼包表中新增数据
+            create_by = info['staffNo']
             data = {
                 'name': info['name'],
                 'limit_goods_num': info['limitGoodsNum'],
-                'create_by': info['staffNo']
+                'image_url': info['image_url'],
+                'create_by': create_by
             }
             base_sql_gifts = 'insert into dbo.gifts ({}) values ({})'
-            sql_item_gifts = []
-            sql_values_gifts = []
-
-            for key in data:
-                sql_item_gifts.append(key)
-                if isinstance(data[key], str):  # 如果是字符串 加上引号
-                    sql_values_gifts.append("\'" + data[key] + "\'")
-                else:
-                    sql_values_gifts.append(data[key])
-
+            sql_item_gifts, sql_values_gifts = format_sql_values(data)
             sql_gifts = base_sql_gifts.format(','.join(sql_item_gifts), ','.join(list(map(str, sql_values_gifts))))
 
             cursor.execute(sql_gifts)
@@ -38,28 +31,8 @@ class GiftBagModel(object):
             gift_id = cursor.lastrowid
 
             # 向礼包商品关系表中插入数据
-
             goods_list = info['goods']
-            for goods in goods_list:
-                relation_info = {
-                    'gift_id': gift_id,
-                    'goods_id': goods['id'],
-                    'create_by': info['staffNo']
-                }
-
-                base_sql_relation = 'insert into dbo.gift_goods_relation ({}) values ({})'
-                sql_item_relation = []
-                sql_values_relation = []
-
-                for key in relation_info:
-                    sql_item_relation.append(key)
-                    if isinstance(relation_info[key], str):  # 如果是字符串 加上引号
-                        sql_values_relation.append("\'" + relation_info[key] + "\'")
-                    else:
-                        sql_values_relation.append(relation_info[key])
-
-                sql_relation = base_sql_relation.format(','.join(sql_item_relation), ','.join(list(map(str, sql_values_relation))))
-                cursor.execute(sql_relation)
+            cls.insert_records_into_gift_goods_relation(cursor, goods_list, gift_id, create_by)
             cls.conn_ss.commit()
             cursor.close()
             return True
@@ -70,7 +43,7 @@ class GiftBagModel(object):
 
     # 获取礼包列表
     @classmethod
-    def get_all(cls, page, page_size, gift_name, goods_name, gift_status):
+    def get_all(cls, page, page_size, gift_name, goods_name, gift_status, staff_no):
         gift_ids_str = ''
         if goods_name:
             print(goods_name)
@@ -115,9 +88,10 @@ class GiftBagModel(object):
                 gift_item['name'] = row[1]
                 gift_item['status'] = row[2]
                 gift_item['limitGoodsNum'] = row[3]
+                gift_item['image_url'] = row[8]
                 gift_item['goods'] = []
                 gift_id = row[0]
-                sql_relation = '''SELECT gi.*
+                sql_relation = '''SELECT gi.*, ggr.is_must
                                     FROM gift_goods_relation ggr
                                     INNER JOIN (
                                     select g.id goodsId, g.name goodsName, g.image_url,g.unit, g.price, s.num
@@ -135,6 +109,10 @@ class GiftBagModel(object):
                 df_goods = pd.read_sql(sql_relation, con=cls.conn_ss)
                 goods_list = []
                 for goodsIndex, goods in df_goods.iterrows():
+                    goods_id = goods[0]
+                    like_sql = "SELECT count(*) as likeNum FROM [like] l WHERE l.status = 1 AND l.create_by = '%s' AND l.goods_id = '%s'" % (staff_no, goods_id)
+                    df_total_like_count = pd.read_sql(like_sql, con=cls.conn_ss)
+                    total_like_num = df_total_like_count['likeNum'][0]
                     goods_item = {}
                     goods_item['id'] = goods[0]
                     goods_item['name'] = goods[1]
@@ -142,6 +120,8 @@ class GiftBagModel(object):
                     goods_item['unit'] = goods[3]
                     goods_item['price'] = goods[4]
                     goods_item['num'] = goods[5]
+                    goods_item['is_must'] = goods[6]
+                    goods_item['totalLikeNum'] = total_like_num
                     goods_list.append(goods_item)
                 gift_item['goods'] = goods_list
                 gift_list.append(gift_item)
@@ -165,7 +145,7 @@ class GiftBagModel(object):
     @classmethod
     def edit_gift_bag_status(cls, gift_bag_id, status, staff_no):
         now = get_now()
-        now= f'\'{now}\''
+        now = f'\'{now}\''
         try:
             cursor = cls.conn_ss.cursor()
 
@@ -177,53 +157,49 @@ class GiftBagModel(object):
             return True
         except Exception as e:
             cls.conn_ss.rollback()
-            return False
+            err_msg = e
+            return False, err_msg
 
     # 修改礼包信息
     @classmethod
     def edit_gift_bag_info(cls, data):
         now = get_now()
-        # try:
-        cursor = cls.conn_ss.cursor()
+        try:
+            cursor = cls.conn_ss.cursor()
 
-        # 更新gifts表中的数据
-        update_sql = "update gifts set name = '%s', limit_goods_num = '%d', update_by = '%s', update_time = '%s' where id = '%s'" % (data['name'], data['limitGoodsNum'], data['staffNo'], now, data['id'])
-        cursor.execute(update_sql)
+            # 更新gifts表中的数据
+            update_sql = "update gifts set name = '%s', limit_goods_num = '%d', update_by = '%s', update_time = '%s', image_url = '%s' where id = '%s'" % (data['name'], data['limitGoodsNum'], data['staffNo'], now, data['image_url'], data['id'] )
+            cursor.execute(update_sql)
 
-        # 根据gifts.id删除gifts_goods_relation表中的关系
-        update_relation_sql = "update gift_goods_relation set status = 2, update_by = '%s', update_time = '%s' where gift_id = '%s' and status = 1" % (data['staffNo'], now, data['id'])
-        cursor.execute(update_relation_sql)
+            # 根据gifts.id删除gifts_goods_relation表中的关系
+            update_relation_sql = "update gift_goods_relation set status = 2, update_by = '%s', update_time = '%s' where gift_id = '%s' and status = 1" % (data['staffNo'], now, data['id'])
+            cursor.execute(update_relation_sql)
 
-        # 根据goods插入新的数据
-        goods_list = data['goods']
+            # 根据goods插入新的数据
+            goods_list = data['goods']
+            gift_id = data['id']
+            create_by = data['staffNo']
+            cls.insert_records_into_gift_goods_relation(cursor, goods_list, gift_id, create_by)
+            cls.conn_ss.commit()
+            cursor.close()
+            return True
+        except Exception as e:
+            print(e)
+            cls.conn_ss.rollback()
+            return False
+
+    # 向gift_goods_relation表中插入数据
+    @classmethod
+    def insert_records_into_gift_goods_relation(cls, cursor, goods_list, gift_id, create_by):
         for goods in goods_list:
             relation_info = {
-                'gift_id': data['id'],
+                'gift_id': gift_id,
                 'goods_id': goods['id'],
-                'create_by': data['staffNo']
+                'create_by': create_by,
+                'is_must': goods['is_must']
             }
 
             base_sql_relation = 'insert into dbo.gift_goods_relation ({}) values ({})'
-            sql_item_relation = []
-            sql_values_relation = []
-
-            for key in relation_info:
-                sql_item_relation.append(key)
-                if isinstance(relation_info[key], str):  # 如果是字符串 加上引号
-                    sql_values_relation.append("\'" + relation_info[key] + "\'")
-                else:
-                    sql_values_relation.append(relation_info[key])
-
-            sql_relation = base_sql_relation.format(','.join(sql_item_relation),
-                                                    ','.join(list(map(str, sql_values_relation))))
-            print(sql_relation)
+            sql_item_relation, sql_values_relation = format_sql_values(relation_info)
+            sql_relation = base_sql_relation.format(','.join(sql_item_relation), ','.join(list(map(str, sql_values_relation))))
             cursor.execute(sql_relation)
-            print('end_gift')
-            print(goods)
-
-        cls.conn_ss.commit()
-        cursor.close()
-        return True
-        # except Exception as e:
-        #     cls.conn_ss.rollback()
-        #     return False

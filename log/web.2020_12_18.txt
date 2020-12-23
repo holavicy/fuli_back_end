@@ -1,0 +1,145 @@
+2020-12-18 13:49:13,724 - tornado.application - ERROR - Uncaught exception GET /api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 42, in get
+    total_num, df_records = UserModel.get_user_list(page, page_size, staff_no, name, get_status, get_year)
+  File "F:\workspace\fuli_back_end\giftapp\models\user.py", line 78, in get_user_list
+    order by og.name, org.name, ss.code"%(get_year, get_year, get_year, get_year)
+ValueError: unsupported format character '?' (0x6d4b) at index 1216
+2020-12-18 13:49:13,751 - tornado.access - ERROR - 500 GET /api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1) 26.93ms
+2020-12-18 13:50:09,862 - tornado.application - ERROR - Uncaught exception GET /api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 42, in get
+    total_num, df_records = UserModel.get_user_list(page, page_size, staff_no, name, get_status, get_year)
+  File "F:\workspace\fuli_back_end\giftapp\models\user.py", line 80, in get_user_list
+    order by og.name, org.name, ss.code"%(year, year, year, year)
+ValueError: unsupported format character '?' (0x6d4b) at index 1216
+2020-12-18 13:50:09,864 - tornado.access - ERROR - 500 GET /api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1) 2.99ms
+2020-12-18 13:51:58,138 - tornado.application - ERROR - Uncaught exception GET /api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 42, in get
+    total_num, df_records = UserModel.get_user_list(page, page_size, staff_no, name, get_status, get_year)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-18 13:51:58,141 - tornado.access - ERROR - 500 GET /api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1) 3.98ms
+2020-12-18 13:56:43,240 - tornado.application - ERROR - Uncaught exception GET /api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 42, in get
+    total_num, df_records = UserModel.get_user_list(page, page_size, staff_no, name, get_status, get_year)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-18 13:56:43,242 - tornado.access - ERROR - 500 GET /api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1) 2.99ms
+2020-12-18 13:58:00,438 - tornado.application - ERROR - Uncaught exception GET /api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 42, in get
+    total_num, df_records = UserModel.get_user_list(page, page_size, staff_no, name, get_status, get_year)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-18 13:58:00,440 - tornado.access - ERROR - 500 GET /api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1) 2.00ms
+2020-12-18 13:59:25,137 - tornado.application - ERROR - Uncaught exception GET /api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 42, in get
+    total_num, df_records = UserModel.get_user_list(page, page_size, staff_no, name, get_status, get_year)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-18 13:59:25,139 - tornado.access - ERROR - 500 GET /api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1) 2.99ms
+2020-12-18 13:59:57,451 - tornado.application - ERROR - Uncaught exception GET /api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 42, in get
+    total_num, df_records = UserModel.get_user_list(page, page_size, staff_no, name, get_status, get_year)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-18 13:59:57,454 - tornado.access - ERROR - 500 GET /api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1) 2.99ms
+2020-12-18 14:15:17,552 - tornado.application - ERROR - Uncaught exception GET /api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 42, in get
+    total_num, df_records = UserModel.get_user_list(page, page_size, staff_no, name, get_status, get_year)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-18 14:15:17,554 - tornado.access - ERROR - 500 GET /api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1) 12.97ms
+2020-12-18 14:27:47,737 - tornado.application - ERROR - Uncaught exception GET /api/getUserList?page=1&pageSize=10&staffNo=&name=%E6%9D%A8%E7%8F%8A&getStatus=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getUserList?page=1&pageSize=10&staffNo=&name=%E6%9D%A8%E7%8F%8A&getStatus=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 42, in get
+    total_num, df_records = UserModel.get_user_list(page, page_size, staff_no, name, get_status, get_year)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-18 14:27:47,741 - tornado.access - ERROR - 500 GET /api/getUserList?page=1&pageSize=10&staffNo=&name=%E6%9D%A8%E7%8F%8A&getStatus=&getYear=2020-12-31 (127.0.0.1) 22.94ms
+2020-12-18 15:20:20,438 - tornado.application - ERROR - Uncaught exception GET /api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 42, in get
+    total_num, df_records = UserModel.get_user_list(page, page_size, staff_no, name, get_status, get_year)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-18 15:20:20,444 - tornado.access - ERROR - 500 GET /api/getUserList?page=1&pageSize=10&staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1) 2292.98ms
+2020-12-18 15:24:58,276 - tornado.application - ERROR - Uncaught exception GET /api/getUserList?page=1&pageSize=10&staffNo=&name=%E9%99%88%E6%98%8E%E5%A7%A3&getStatus=1&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getUserList?page=1&pageSize=10&staffNo=&name=%E9%99%88%E6%98%8E%E5%A7%A3&getStatus=1&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 42, in get
+    total_num, df_records = UserModel.get_user_list(page, page_size, staff_no, name, get_status, get_year)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-18 15:24:58,279 - tornado.access - ERROR - 500 GET /api/getUserList?page=1&pageSize=10&staffNo=&name=%E9%99%88%E6%98%8E%E5%A7%A3&getStatus=1&getYear=2020-12-31 (127.0.0.1) 33.91ms
+2020-12-18 15:25:59,084 - tornado.application - ERROR - Uncaught exception GET /api/getUserList?page=1&pageSize=10&staffNo=&name=%E9%99%88%E6%98%8E%E5%A7%A3&getStatus=1&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getUserList?page=1&pageSize=10&staffNo=&name=%E9%99%88%E6%98%8E%E5%A7%A3&getStatus=1&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 42, in get
+    total_num, df_records = UserModel.get_user_list(page, page_size, staff_no, name, get_status, get_year)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-18 15:25:59,086 - tornado.access - ERROR - 500 GET /api/getUserList?page=1&pageSize=10&staffNo=&name=%E9%99%88%E6%98%8E%E5%A7%A3&getStatus=1&getYear=2020-12-31 (127.0.0.1) 193.45ms
+2020-12-18 15:26:30,049 - tornado.application - ERROR - Uncaught exception GET /api/getUserList?page=1&pageSize=10&staffNo=&name=%E9%99%88%E6%98%8E%E5%A7%A3&getStatus=1&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getUserList?page=1&pageSize=10&staffNo=&name=%E9%99%88%E6%98%8E%E5%A7%A3&getStatus=1&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 42, in get
+    total_num, df_records = UserModel.get_user_list(page, page_size, staff_no, name, get_status, get_year)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-18 15:26:30,050 - tornado.access - ERROR - 500 GET /api/getUserList?page=1&pageSize=10&staffNo=&name=%E9%99%88%E6%98%8E%E5%A7%A3&getStatus=1&getYear=2020-12-31 (127.0.0.1) 40.89ms
+2020-12-18 16:41:40,672 - tornado.application - ERROR - Uncaught exception GET /api/getUserInfoNC?code=100297 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getUserInfoNC?code=100297', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1586, in execute
+    cur.execute(*args, **kwargs)
+cx_Oracle.DatabaseError: ORA-00923: 未找到要求的 FROM 关键字
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 19, in get
+    df_records = UserModel.get_user_info(code)
+  File "F:\workspace\fuli_back_end\giftapp\models\user.py", line 39, in get_user_info
+    df_records = pd.read_sql(sql, con=cls.db_nc)
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 412, in read_sql
+    chunksize=chunksize,
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1633, in read_query
+    cursor = self.execute(*args)
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1598, in execute
+    raise ex from exc
+pandas.io.sql.DatabaseError: Execution failed on sql 'select ss.code, ss.name, ss.birthdate,c.hiredate, jr.jobrankcodefrom bd_psndoc ssinner join hi_psnjob job on ss.pk_psndoc = job.pk_psndocinner join om_jobrank jr on jr.pk_jobrank = job.pk_jobrankleft join (  select a.clerkcode, min(a.begindate) as hiredate   from hi_psnjob a   left join bd_psncl b on a.pk_psncl = b.pk_psncl   where b.name = '全职' group by a.clerkcode) c on c.clerkcode = ss.code where job.endflag = 'N'and job.ismainjob = 'Y'and job.lastflag = 'Y'and ss.code = '100297'': ORA-00923: 未找到要求的 FROM 关键字
+2020-12-18 16:41:40,696 - tornado.access - ERROR - 500 GET /api/getUserInfoNC?code=100297 (127.0.0.1) 36.90ms

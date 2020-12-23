@@ -1,6 +1,9 @@
 import tornado.web
 import tornado.httpserver
 import tornado.ioloop
+import logging
+import time
+from apscheduler.schedulers.tornado import TornadoScheduler
 from handlers import goods as goods_handlers
 from handlers import giftBag as giftBag_handlers
 from handlers import dd as dd_handlers
@@ -10,6 +13,7 @@ from handlers import user as user_handlers
 from handlers import like as like_handlers
 from handlers import supply as supply_handlers
 from handlers import suggest as suggest_handlers
+from handlers.task import TaskHandler
 
 HANDLERS = [
     # 商品相关
@@ -39,6 +43,8 @@ HANDLERS = [
     (r"/api/getUserInfoByUserId", dd_handlers.UserInfoHandler),
     # 喜欢某商品相关
     (r"/api/like", like_handlers.LikeListHandler),
+    (r"/api/isLike", like_handlers.LikeListHandler),
+    (r"/api/cancelLike", like_handlers.CancelLikeHandler),
     # 用户相关
     (r"/api/getUserInfoNC", user_handlers.UserInfoHandler),
     (r"/api/getUserList", user_handlers.UserListHandler),
@@ -47,8 +53,24 @@ HANDLERS = [
     (r"/api/cancelSupply", supply_handlers.SupplyStatusHandler),
     # 建议相关
     (r"/api/suggestDict", suggest_handlers.SuggestDictListHandler),
-    (r"/api/suggest", suggest_handlers.SuggestListHandler)
+    (r"/api/suggest", suggest_handlers.SuggestListHandler),
+    (r"/api/suggestRecords", suggest_handlers.SuggestListHandler)
 ]
+
+logging.basicConfig(filename=f"./log/web.{time.strftime('%Y_%m_%d')}.txt",
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+sched = TornadoScheduler()
+
+# 每天提醒一周后过生日（未申请）的人可申请礼包
+# sched.add_job(TaskHandler.get_next_week_birth_user_id_list, 'cron', day='1-31', hour=9, minute=0, start_date='2021-01-01 00:00:00')
+# sched.add_job(TaskHandler.get_next_week_birth_user_id_list, 'interval', seconds = 5)
+
+# 每周五提醒未申请领取的员工及时申请领取
+# sched.add_job(TaskHandler.get_un_finish_user_list, 'cron', day_of_week='5', hour=9, minute=30, start_date='2021-01-01 00:00:00')
+# sched.add_job(TaskHandler.get_un_finish_user_list, 'interval', seconds = 14)
+
+sched.start()
 
 
 def run():
@@ -56,10 +78,9 @@ def run():
         HANDLERS
     )
     http_server = tornado.httpserver.HTTPServer(app)
-    port = 8888
+    port = 8082
     http_server.listen(port)
     tornado.ioloop.IOLoop.instance().start()
-
 
 if __name__ == '__main__':
     run()

@@ -28,7 +28,7 @@ class UploadImage(BaseHandler):
                 filename = str(staff_no) + str(time()) + "." + img_type
                 with open('files/goodsImages/{}'.format(filename), 'wb') as f:
                     f.write(dict_img['body'])
-                url = 'files/goodsImages/' + filename
+                url = '/goodsImages/' + filename
                 response['data'] = url
                 self.write(json_encode(response))
             else:

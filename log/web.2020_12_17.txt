@@ -1,0 +1,77 @@
+2020-12-17 09:21:09,876 - tornado.application - ERROR - Uncaught exception GET /api/goods?page=1&pageSize=10&goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/goods?page=1&pageSize=10&goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\goods.py", line 22, in get
+    total_num, df_records = GoodsModel.get_all(page, page_size, name, status)
+  File "F:\workspace\fuli_back_end\giftapp\models\goods.py", line 41, in get_all
+    df_records = df_records.to_json(orient='records')
+  File "D:\apps\python\lib\site-packages\pandas\core\generic.py", line 2364, in to_json
+    indent=indent,
+  File "D:\apps\python\lib\site-packages\pandas\io\json\_json.py", line 85, in to_json
+    indent=indent,
+  File "D:\apps\python\lib\site-packages\pandas\io\json\_json.py", line 131, in __init__
+    self._format_axes()
+  File "D:\apps\python\lib\site-packages\pandas\io\json\_json.py", line 220, in _format_axes
+    f"DataFrame columns must be unique for orient='{self.orient}'."
+ValueError: DataFrame columns must be unique for orient='records'.
+2020-12-17 09:21:09,921 - tornado.access - ERROR - 500 GET /api/goods?page=1&pageSize=10&goodsName=&goodsStatus= (127.0.0.1) 75.80ms
+2020-12-17 09:31:14,679 - tornado.application - ERROR - Uncaught exception GET /api/goods?page=1&pageSize=10&goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/goods?page=1&pageSize=10&goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\goods.py", line 22, in get
+    total_num, df_records = GoodsModel.get_all(page, page_size, name, status)
+  File "F:\workspace\fuli_back_end\giftapp\models\goods.py", line 42, in get_all
+    df_records = df_records.to_json(orient='records')
+  File "D:\apps\python\lib\site-packages\pandas\core\generic.py", line 2364, in to_json
+    indent=indent,
+  File "D:\apps\python\lib\site-packages\pandas\io\json\_json.py", line 85, in to_json
+    indent=indent,
+  File "D:\apps\python\lib\site-packages\pandas\io\json\_json.py", line 131, in __init__
+    self._format_axes()
+  File "D:\apps\python\lib\site-packages\pandas\io\json\_json.py", line 220, in _format_axes
+    f"DataFrame columns must be unique for orient='{self.orient}'."
+ValueError: DataFrame columns must be unique for orient='records'.
+2020-12-17 09:31:14,684 - tornado.access - ERROR - 500 GET /api/goods?page=1&pageSize=10&goodsName=&goodsStatus= (127.0.0.1) 36.90ms
+2020-12-17 09:31:31,880 - tornado.application - ERROR - Uncaught exception GET /api/goods?page=1&pageSize=10&goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/goods?page=1&pageSize=10&goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\goods.py", line 22, in get
+    total_num, df_records = GoodsModel.get_all(page, page_size, name, status)
+  File "F:\workspace\fuli_back_end\giftapp\models\goods.py", line 42, in get_all
+    df_records = df_records.to_json(orient='records')
+  File "D:\apps\python\lib\site-packages\pandas\core\generic.py", line 2364, in to_json
+    indent=indent,
+  File "D:\apps\python\lib\site-packages\pandas\io\json\_json.py", line 85, in to_json
+    indent=indent,
+  File "D:\apps\python\lib\site-packages\pandas\io\json\_json.py", line 131, in __init__
+    self._format_axes()
+  File "D:\apps\python\lib\site-packages\pandas\io\json\_json.py", line 220, in _format_axes
+    f"DataFrame columns must be unique for orient='{self.orient}'."
+ValueError: DataFrame columns must be unique for orient='records'.
+2020-12-17 09:31:31,886 - tornado.access - ERROR - 500 GET /api/goods?page=1&pageSize=10&goodsName=&goodsStatus= (127.0.0.1) 22.97ms
+2020-12-17 09:32:20,599 - tornado.application - ERROR - Uncaught exception GET /api/goods?page=1&pageSize=10&goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/goods?page=1&pageSize=10&goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\goods.py", line 22, in get
+    total_num, df_records = GoodsModel.get_all(page, page_size, name, status)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-17 09:32:20,601 - tornado.access - ERROR - 500 GET /api/goods?page=1&pageSize=10&goodsName=&goodsStatus= (127.0.0.1) 33.91ms
+2020-12-17 09:32:57,754 - tornado.application - ERROR - Uncaught exception GET /api/goods?page=1&pageSize=10&goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/goods?page=1&pageSize=10&goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\goods.py", line 22, in get
+    total_num, df_records = GoodsModel.get_all(page, page_size, name, status)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-17 09:32:57,756 - tornado.access - ERROR - 500 GET /api/goods?page=1&pageSize=10&goodsName=&goodsStatus= (127.0.0.1) 12.96ms
+2020-12-17 09:40:45,520 - tornado.general - WARNING - 400 GET /api/giftBag?page=1&pageSize=10&giftName=&goodsName=&giftStatus=1 (127.0.0.1): Missing argument staffNo
+2020-12-17 09:40:45,521 - tornado.access - WARNING - 400 GET /api/giftBag?page=1&pageSize=10&giftName=&goodsName=&giftStatus=1 (127.0.0.1) 2.00ms

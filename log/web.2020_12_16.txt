@@ -1,0 +1,102 @@
+2020-12-16 16:20:23,614 - tornado.application - ERROR - Uncaught exception GET /api/suggestRecords?staffNo=100297 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/suggestRecords?staffNo=100297', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\suggest.py", line 37, in get
+    df_records = SuggestModel.get_suggest_records(staff_no)
+  File "F:\workspace\fuli_back_end\giftapp\models\suggest.py", line 49, in get_suggest_records
+    start_time = year+'-01-01 00:00:00'
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+2020-12-16 16:20:23,643 - tornado.access - ERROR - 500 GET /api/suggestRecords?staffNo=100297 (127.0.0.1) 28.92ms
+2020-12-16 16:21:21,945 - tornado.application - ERROR - Uncaught exception GET /api/suggestRecords?staffNo=100297 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/suggestRecords?staffNo=100297', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\suggest.py", line 38, in get
+    df_records = SuggestModel.get_suggest_records(staff_no)
+  File "F:\workspace\fuli_back_end\giftapp\models\suggest.py", line 49, in get_suggest_records
+    start_time = year+'-01-01 00:00:00'
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+2020-12-16 16:21:21,950 - tornado.access - ERROR - 500 GET /api/suggestRecords?staffNo=100297 (127.0.0.1) 62.83ms
+2020-12-16 16:21:40,760 - tornado.application - ERROR - Uncaught exception GET /api/suggestRecords?staffNo=100297 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/suggestRecords?staffNo=100297', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\suggest.py", line 39, in get
+    df_records = SuggestModel.get_suggest_records(staff_no)
+  File "F:\workspace\fuli_back_end\giftapp\models\suggest.py", line 49, in get_suggest_records
+    start_time = year+'-01-01 00:00:00'
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+2020-12-16 16:21:40,762 - tornado.access - ERROR - 500 GET /api/suggestRecords?staffNo=100297 (127.0.0.1) 43.88ms
+2020-12-16 16:22:10,770 - tornado.application - ERROR - Uncaught exception GET /api/suggestRecords?staffNo=100297 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/suggestRecords?staffNo=100297', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\suggest.py", line 39, in get
+    df_records = SuggestModel.get_suggest_records(staff_no)
+  File "F:\workspace\fuli_back_end\giftapp\models\suggest.py", line 49, in get_suggest_records
+    start_time = year+'-01-01 00:00:00'
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+2020-12-16 16:22:10,773 - tornado.access - ERROR - 500 GET /api/suggestRecords?staffNo=100297 (127.0.0.1) 44.88ms
+2020-12-16 16:22:34,754 - tornado.application - ERROR - Uncaught exception GET /api/suggestRecords?staffNo=100297 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/suggestRecords?staffNo=100297', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\suggest.py", line 39, in get
+    df_records = SuggestModel.get_suggest_records(staff_no)
+  File "F:\workspace\fuli_back_end\giftapp\models\suggest.py", line 50, in get_suggest_records
+    start_time = year+'-01-01 00:00:00'
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+2020-12-16 16:22:34,757 - tornado.access - ERROR - 500 GET /api/suggestRecords?staffNo=100297 (127.0.0.1) 35.90ms
+2020-12-16 16:23:07,201 - tornado.application - ERROR - Uncaught exception GET /api/suggestRecords?staffNo=100297 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/suggestRecords?staffNo=100297', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\suggest.py", line 41, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+2020-12-16 16:23:07,213 - tornado.access - ERROR - 500 GET /api/suggestRecords?staffNo=100297 (127.0.0.1) 53.86ms
+2020-12-16 16:52:41,608 - tornado.application - ERROR - Uncaught exception GET /api/getOrderList?page=1&pageSize=10&staffNo=&staffName=&creator=&creatorName=&year=&orderStatus=1,2,3 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getOrderList?page=1&pageSize=10&staffNo=&staffName=&creator=&creatorName=&year=&orderStatus=1,2,3', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "pymssql.pyx", line 448, in pymssql.Cursor.execute
+  File "_mssql.pyx", line 1064, in _mssql.MSSQLConnection.execute_query
+  File "_mssql.pyx", line 1095, in _mssql.MSSQLConnection.execute_query
+  File "_mssql.pyx", line 1228, in _mssql.MSSQLConnection.format_and_run_query
+  File "_mssql.pyx", line 1639, in _mssql.check_cancel_and_raise
+  File "_mssql.pyx", line 1683, in _mssql.maybe_raise_MSSQLDatabaseException
+_mssql.MSSQLDatabaseException: (102, b"Incorrect syntax near ','.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1586, in execute
+    cur.execute(*args, **kwargs)
+  File "pymssql.pyx", line 465, in pymssql.Cursor.execute
+pymssql.ProgrammingError: (102, b"Incorrect syntax near ','.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\order.py", line 48, in get
+    total_num, df_records = OrderModel.get_all(page, page_size, staff_no, year, order_status, creator, creator_name, staff_name)
+  File "F:\workspace\fuli_back_end\giftapp\models\order.py", line 154, in get_all
+    df_total_count = pd.read_sql(total_count_sql, con=cls.conn_ss)
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 412, in read_sql
+    chunksize=chunksize,
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1633, in read_query
+    cursor = self.execute(*args)
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1598, in execute
+    raise ex from exc
+pandas.io.sql.DatabaseError: Execution failed on sql 'select COUNT(id) as totalNum from [order] where status=1,2,3     ': (102, b"Incorrect syntax near ','.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2020-12-16 16:52:41,638 - tornado.access - ERROR - 500 GET /api/getOrderList?page=1&pageSize=10&staffNo=&staffName=&creator=&creatorName=&year=&orderStatus=1,2,3 (127.0.0.1) 44.88ms

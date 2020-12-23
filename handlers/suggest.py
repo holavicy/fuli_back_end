@@ -25,6 +25,24 @@ class SuggestDictListHandler(BaseHandler):
 
 
 class SuggestListHandler(BaseHandler):
+    # 获取意见记录
+    def get(self):
+        print('suggest')
+        staff_no = self.get_argument('staffNo')
+        print(staff_no)
+        response = {
+            'code': 0,
+            'data': '',
+            'errorMsg': ''
+        }
+
+        df_records = SuggestModel.get_suggest_records(staff_no)
+        data = {
+            'list': json.loads(df_records)
+        }
+        response['data'] = data
+        self.write(json_encode(response))
+
     def post(self):
         data = tornado.escape.json_decode(self.request.body)
         response = {

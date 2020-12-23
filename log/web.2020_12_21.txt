@@ -1,0 +1,18 @@
+2020-12-21 16:44:38,727 - tornado.application - ERROR - Uncaught exception GET /api/goods?page=&pageSize=&goodsName=&goodsStatus=1 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/goods?page=&pageSize=&goodsName=&goodsStatus=1', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\goods.py", line 22, in get
+    total_num, df_records = GoodsModel.get_all(page, page_size, name, status)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-21 16:44:38,746 - tornado.access - ERROR - 500 GET /api/goods?page=&pageSize=&goodsName=&goodsStatus=1 (127.0.0.1) 50.86ms
+2020-12-21 16:44:46,835 - tornado.application - ERROR - Uncaught exception GET /api/goods?page=&pageSize=&goodsName=&goodsStatus=1 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/goods?page=&pageSize=&goodsName=&goodsStatus=1', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\goods.py", line 22, in get
+    total_num, df_records = GoodsModel.get_all(page, page_size, name, status)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-21 16:44:46,838 - tornado.access - ERROR - 500 GET /api/goods?page=&pageSize=&goodsName=&goodsStatus=1 (127.0.0.1) 18.95ms

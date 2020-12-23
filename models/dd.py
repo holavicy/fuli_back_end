@@ -2,6 +2,7 @@ import requests
 import urllib.parse
 import hashlib
 import time
+from common.tool import TaskErr, get_now
 
 
 class DDModel(object):
@@ -37,7 +38,8 @@ class DDModel(object):
             params=dict(access_token=access_token, code=code)
         )
         response = response.json()
-        print(response)
+        if response.get('errcode') != 0:
+            raise TaskErr(1, response)
         return response
 
     '''
@@ -62,9 +64,11 @@ class DDModel(object):
     def send_message(cls, user_id):
         access_token = cls.get_access_token()
 
+        now = get_now()
+
         url = cls.url + '/topapi/message/corpconversation/asyncsend_v2?access_token=' + access_token
         HEADERS = {'Content-Type': 'application/json'}
-        target_url = urllib.parse.quote('http://127.0.0.1:8080/#/orderList')
+        target_url = urllib.parse.quote('http://192.168.40.229:8081/gift/#/orderList')
         print(target_url)
         data = {
             "agent_id": cls.agent_id,
@@ -80,7 +84,7 @@ class DDModel(object):
                         },
                         "body": {
                             "title": "您有一个生日礼包可以前往领取啦",
-                            "content": "管理员已通过您提交的领取生日礼包申请，现在可以前往领取生日礼包，具体领取方式可联系福利管理员",
+                            "content": now + ",管理员已通过您提交的领取生日礼包申请，请于周五下午3-5点前往集团大楼4楼409联系福利专员领取",
                         }
                     }
                 }
@@ -96,9 +100,11 @@ class DDModel(object):
     def send_supply_message(cls, user_id, msg):
         access_token = cls.get_access_token()
 
+        now = get_now()
+
         url = cls.url + '/topapi/message/corpconversation/asyncsend_v2?access_token=' + access_token
         HEADERS = {'Content-Type': 'application/json'}
-        target_url = urllib.parse.quote('http://127.0.0.1:8080/#/')
+        target_url = urllib.parse.quote('http://192.168.40.229:8081/gift')
         data = {
             "agent_id": cls.agent_id,
             "userid_list": user_id,
@@ -113,7 +119,43 @@ class DDModel(object):
                     },
                     "body": {
                         "title": "您有一个代领消息",
-                        "content": msg,
+                        "content": now + "," + msg,
+                    }
+                }
+            }
+        }
+        res = requests.post(url=url, headers=HEADERS, json=data)
+        print(res.text)
+        return res.text
+
+    '''
+   每日提醒一周后过生日的人
+   '''
+
+    @classmethod
+    def send_birth_message(cls, user_id, msg):
+        access_token = cls.get_access_token()
+
+        now = get_now()
+
+        url = cls.url + '/topapi/message/corpconversation/asyncsend_v2?access_token=' + access_token
+        HEADERS = {'Content-Type': 'application/json'}
+        target_url = urllib.parse.quote('http://192.168.40.229:8081/gift')
+        data = {
+            "agent_id": cls.agent_id,
+            "userid_list": user_id,
+            "msg": {
+                "msgtype": "oa",
+                "oa": {
+                    "message_url": "eapp://pages/index/index",
+                    "pc_message_url": "dingtalk://dingtalkclient/action/openapp?corpid=" + cls.CorpId + "&container_type=work_platform&app_id=0_" + cls.agent_id + "&redirect_type=jump&redirect_url=" + target_url,
+                    "head": {
+                        "bgcolor": "FFBBBBBB",
+                        "text": "福利管理系统"
+                    },
+                    "body": {
+                        "title": "您有一个生日礼包可申请领取！",
+                        "content": now + "," + msg,
                     }
                 }
             }
