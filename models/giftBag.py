@@ -76,7 +76,7 @@ class GiftBagModel(object):
             # 获取gift记录
             if page and page_size:
                 min_top = (int(page) - 1) * int(page_size)
-                max_top = int(page) * int(page_size)
+                max_top = int(page_size)
                 records_sql = f'select top {max_top} * from gifts where id not in (select top {min_top} id from gifts WHERE status {status_sql} {name_sql} {ids_sql}  order by create_time desc) AND status {status_sql} {name_sql} {ids_sql} order by create_time desc'
             else:
                 records_sql = f'select * from gifts WHERE status {status_sql} {name_sql} {ids_sql}  order by create_time desc'

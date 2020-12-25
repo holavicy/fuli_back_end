@@ -1,7 +1,9 @@
+import pymssql
 import requests
 import urllib.parse
 import hashlib
 import time
+import pandas as pd
 from common.tool import TaskErr, get_now
 
 
@@ -12,6 +14,9 @@ class DDModel(object):
     appSecret = 'xzoq0h_N3wfBoty8BdGEYrs3T9NnC5Rjm6HKNrXkV2h4XI4a5gGR8m2HT13wKxNg'
     agent_id = '927117753'
     CorpId = 'dingcd0f5a2514db343b35c2f4657eb6378f'
+
+    conn_ss = pymssql.connect(host='192.168.40.229:1433', port=3306, user='serverapp', password='wetown2020',
+                              database='DingDB')
 
 
     '''
@@ -61,8 +66,11 @@ class DDModel(object):
     param: access_token, agent_id, msg, userid_list
     '''
     @classmethod
-    def send_message(cls, user_id):
+    def send_message(cls, staff_no):
+
         access_token = cls.get_access_token()
+        user_id = cls.get_user_id_by_staff_no(staff_no)
+        print(user_id)
 
         now = get_now()
 
@@ -97,8 +105,9 @@ class DDModel(object):
     设置代领后钉钉消息通知代领人
     '''
     @classmethod
-    def send_supply_message(cls, user_id, msg):
+    def send_supply_message(cls, staff_no, msg):
         access_token = cls.get_access_token()
+        user_id = cls.get_user_id_by_staff_no(staff_no)
 
         now = get_now()
 
@@ -133,8 +142,9 @@ class DDModel(object):
    '''
 
     @classmethod
-    def send_birth_message(cls, user_id, msg):
+    def send_birth_message(cls, staff_no, msg):
         access_token = cls.get_access_token()
+        user_id = cls.get_user_id_by_staff_no(staff_no)
 
         now = get_now()
 
@@ -214,3 +224,15 @@ class DDModel(object):
         print(plain_tex)
         signature = hashlib.sha1(plain_tex.encode('utf8'))
         return signature.hexdigest()
+
+    @classmethod
+    def get_user_id_by_staff_no(cls, staff_no):
+        try:
+            sql = "SELECT dm.UserID FROM DingMan dm WHERE dm.JobID = '%s'" % (staff_no)
+            print(sql)
+            df = pd.read_sql(sql, con=cls.conn_ss)
+            user_id = df['UserID'][0]
+
+            return user_id
+        except Exception as e:
+            print(e)

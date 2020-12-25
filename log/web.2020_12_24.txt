@@ -1,0 +1,340 @@
+2020-12-24 13:32:31,023 - tornado.general - WARNING - 400 GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate= (127.0.0.1): Missing argument goodsName
+2020-12-24 13:32:31,028 - tornado.access - WARNING - 400 GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate= (127.0.0.1) 4.99ms
+2020-12-24 13:33:20,572 - tornado.general - WARNING - 400 GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate= (127.0.0.1): Missing argument goodsName
+2020-12-24 13:33:20,572 - tornado.access - WARNING - 400 GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate= (127.0.0.1) 1.00ms
+2020-12-24 13:34:19,385 - tornado.general - WARNING - 400 GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate= (127.0.0.1): Missing argument goodsName
+2020-12-24 13:34:19,386 - tornado.access - WARNING - 400 GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate= (127.0.0.1) 1.00ms
+2020-12-24 13:34:36,726 - tornado.general - WARNING - 400 GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate= (127.0.0.1): Missing argument goodsName
+2020-12-24 13:34:36,727 - tornado.access - WARNING - 400 GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate= (127.0.0.1) 1.03ms
+2020-12-24 13:34:56,037 - tornado.general - WARNING - 400 GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate= (127.0.0.1): Missing argument goodsName
+2020-12-24 13:34:56,038 - tornado.access - WARNING - 400 GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate= (127.0.0.1) 1.00ms
+2020-12-24 13:35:23,684 - tornado.general - WARNING - 400 GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate= (127.0.0.1): Missing argument goodsName
+2020-12-24 13:35:23,684 - tornado.access - WARNING - 400 GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate= (127.0.0.1) 0.00ms
+2020-12-24 13:38:33,754 - tornado.general - WARNING - 400 GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate= (127.0.0.1): Missing argument goodsName
+2020-12-24 13:38:33,754 - tornado.access - WARNING - 400 GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate= (127.0.0.1) 1.00ms
+2020-12-24 13:38:38,336 - tornado.general - WARNING - 400 GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate= (127.0.0.1): Missing argument goodsName
+2020-12-24 13:38:38,336 - tornado.access - WARNING - 400 GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate= (127.0.0.1) 0.00ms
+2020-12-24 13:39:13,248 - tornado.application - ERROR - Uncaught exception GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate=&goodsName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate=&goodsName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\pandas\core\indexes\base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'totalNum'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 40, in get
+    total_num, df_records = ChartModel.goods_stock_in_detail_report(goods_name, begin_date, end_date, page, page_size)
+  File "F:\workspace\fuli_back_end\giftapp\models\chart.py", line 53, in goods_stock_in_detail_report
+    total_num = df_total_count['totalNum'][0]
+  File "D:\apps\python\lib\site-packages\pandas\core\frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "D:\apps\python\lib\site-packages\pandas\core\indexes\base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'totalNum'
+2020-12-24 13:39:13,303 - tornado.access - ERROR - 500 GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate=&goodsName= (127.0.0.1) 67.82ms
+2020-12-24 13:39:59,328 - tornado.application - ERROR - Uncaught exception GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate=&goodsName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate=&goodsName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\pandas\core\indexes\base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'totalNum'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 40, in get
+    total_num, df_records = ChartModel.goods_stock_in_detail_report(goods_name, begin_date, end_date, page, page_size)
+  File "F:\workspace\fuli_back_end\giftapp\models\chart.py", line 53, in goods_stock_in_detail_report
+    total_num = df_total_count['totalNum'][0]
+  File "D:\apps\python\lib\site-packages\pandas\core\frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "D:\apps\python\lib\site-packages\pandas\core\indexes\base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'totalNum'
+2020-12-24 13:39:59,329 - tornado.access - ERROR - 500 GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate=&goodsName= (127.0.0.1) 7.98ms
+2020-12-24 13:40:14,856 - tornado.application - ERROR - Uncaught exception GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate=&goodsName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate=&goodsName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\pandas\core\indexes\base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'totalNum'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 40, in get
+    total_num, df_records = ChartModel.goods_stock_in_detail_report(goods_name, begin_date, end_date, page, page_size)
+  File "F:\workspace\fuli_back_end\giftapp\models\chart.py", line 53, in goods_stock_in_detail_report
+    total_num = df_total_count['totalNum'][0]
+  File "D:\apps\python\lib\site-packages\pandas\core\frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "D:\apps\python\lib\site-packages\pandas\core\indexes\base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'totalNum'
+2020-12-24 13:40:14,858 - tornado.access - ERROR - 500 GET /api/goodsStockInDetailReport?page=&pageSize=&beginDate=&endDate=&goodsName= (127.0.0.1) 9.93ms
+2020-12-24 13:41:13,350 - tornado.application - ERROR - Uncaught exception GET /api/goodsStockInDetailReport?page=1&pageSize=10&beginDate=&endDate=&goodsName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/goodsStockInDetailReport?page=1&pageSize=10&beginDate=&endDate=&goodsName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\pandas\core\indexes\base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'totalNum'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 40, in get
+    total_num, df_records = ChartModel.goods_stock_in_detail_report(goods_name, begin_date, end_date, page, page_size)
+  File "F:\workspace\fuli_back_end\giftapp\models\chart.py", line 53, in goods_stock_in_detail_report
+    total_num = df_total_count['totalNum'][0]
+  File "D:\apps\python\lib\site-packages\pandas\core\frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "D:\apps\python\lib\site-packages\pandas\core\indexes\base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'totalNum'
+2020-12-24 13:41:13,352 - tornado.access - ERROR - 500 GET /api/goodsStockInDetailReport?page=1&pageSize=10&beginDate=&endDate=&goodsName= (127.0.0.1) 10.97ms
+2020-12-24 13:45:21,362 - tornado.application - ERROR - Uncaught exception GET /api/goodsStockInDetailReport?page=1&pageSize=10&beginDate=&endDate=&goodsName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/goodsStockInDetailReport?page=1&pageSize=10&beginDate=&endDate=&goodsName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\pandas\core\indexes\base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'totalNum'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 40, in get
+    total_num, df_records = ChartModel.goods_stock_in_detail_report(goods_name, begin_date, end_date, page, page_size)
+  File "F:\workspace\fuli_back_end\giftapp\models\chart.py", line 53, in goods_stock_in_detail_report
+    total_num = df_total_count['totalNum'][0]
+  File "D:\apps\python\lib\site-packages\pandas\core\frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "D:\apps\python\lib\site-packages\pandas\core\indexes\base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'totalNum'
+2020-12-24 13:45:21,364 - tornado.access - ERROR - 500 GET /api/goodsStockInDetailReport?page=1&pageSize=10&beginDate=&endDate=&goodsName= (127.0.0.1) 8.97ms
+2020-12-24 13:45:29,108 - tornado.application - ERROR - Uncaught exception GET /api/goodsStockInDetailReport?page=1&pageSize=10&beginDate=&endDate=&goodsName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/goodsStockInDetailReport?page=1&pageSize=10&beginDate=&endDate=&goodsName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\pandas\core\indexes\base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'totalNum'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 40, in get
+    total_num, df_records = ChartModel.goods_stock_in_detail_report(goods_name, begin_date, end_date, page, page_size)
+  File "F:\workspace\fuli_back_end\giftapp\models\chart.py", line 53, in goods_stock_in_detail_report
+    total_num = df_total_count['totalNum'][0]
+  File "D:\apps\python\lib\site-packages\pandas\core\frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "D:\apps\python\lib\site-packages\pandas\core\indexes\base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'totalNum'
+2020-12-24 13:45:29,110 - tornado.access - ERROR - 500 GET /api/goodsStockInDetailReport?page=1&pageSize=10&beginDate=&endDate=&goodsName= (127.0.0.1) 8.98ms
+2020-12-24 13:46:15,038 - tornado.application - ERROR - Uncaught exception GET /api/goodsStockInDetailReport?page=1&pageSize=10&beginDate=&endDate=&goodsName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/goodsStockInDetailReport?page=1&pageSize=10&beginDate=&endDate=&goodsName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\pandas\core\indexes\base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'totalNum'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 40, in get
+    total_num, df_records = ChartModel.goods_stock_in_detail_report(goods_name, begin_date, end_date, page, page_size)
+  File "F:\workspace\fuli_back_end\giftapp\models\chart.py", line 53, in goods_stock_in_detail_report
+    total_num = df_total_count['totalNum'][0]
+  File "D:\apps\python\lib\site-packages\pandas\core\frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "D:\apps\python\lib\site-packages\pandas\core\indexes\base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'totalNum'
+2020-12-24 13:46:15,040 - tornado.access - ERROR - 500 GET /api/goodsStockInDetailReport?page=1&pageSize=10&beginDate=&endDate=&goodsName= (127.0.0.1) 8.98ms
+2020-12-24 13:46:26,447 - tornado.application - ERROR - Uncaught exception GET /api/goodsStockInDetailReport?page=1&pageSize=10&beginDate=2020-12-1&endDate=2020-12-24&goodsName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/goodsStockInDetailReport?page=1&pageSize=10&beginDate=2020-12-1&endDate=2020-12-24&goodsName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\pandas\core\indexes\base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'totalNum'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 40, in get
+    total_num, df_records = ChartModel.goods_stock_in_detail_report(goods_name, begin_date, end_date, page, page_size)
+  File "F:\workspace\fuli_back_end\giftapp\models\chart.py", line 53, in goods_stock_in_detail_report
+    total_num = df_total_count['totalNum'][0]
+  File "D:\apps\python\lib\site-packages\pandas\core\frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "D:\apps\python\lib\site-packages\pandas\core\indexes\base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'totalNum'
+2020-12-24 13:46:26,448 - tornado.access - ERROR - 500 GET /api/goodsStockInDetailReport?page=1&pageSize=10&beginDate=2020-12-1&endDate=2020-12-24&goodsName= (127.0.0.1) 12.97ms
+2020-12-24 13:46:35,065 - tornado.application - ERROR - Uncaught exception GET /api/goodsStockInDetailReport?page=1&pageSize=10&beginDate=2020-12-1&endDate=2020-12-24&goodsName=%E6%B5%8B%E8%AF%95 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/goodsStockInDetailReport?page=1&pageSize=10&beginDate=2020-12-1&endDate=2020-12-24&goodsName=%E6%B5%8B%E8%AF%95', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\pandas\core\indexes\base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'totalNum'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 40, in get
+    total_num, df_records = ChartModel.goods_stock_in_detail_report(goods_name, begin_date, end_date, page, page_size)
+  File "F:\workspace\fuli_back_end\giftapp\models\chart.py", line 53, in goods_stock_in_detail_report
+    total_num = df_total_count['totalNum'][0]
+  File "D:\apps\python\lib\site-packages\pandas\core\frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "D:\apps\python\lib\site-packages\pandas\core\indexes\base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'totalNum'
+2020-12-24 13:46:35,066 - tornado.access - ERROR - 500 GET /api/goodsStockInDetailReport?page=1&pageSize=10&beginDate=2020-12-1&endDate=2020-12-24&goodsName=%E6%B5%8B%E8%AF%95 (127.0.0.1) 13.96ms
+2020-12-24 13:47:31,008 - tornado.application - ERROR - Uncaught exception GET /api/goodsStockInDetailReport?page=1&pageSize=10&beginDate=2020-12-1&endDate=2020-12-24&goodsName=%E6%B5%8B%E8%AF%95 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/goodsStockInDetailReport?page=1&pageSize=10&beginDate=2020-12-1&endDate=2020-12-24&goodsName=%E6%B5%8B%E8%AF%95', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 40, in get
+    total_num, df_records = ChartModel.goods_stock_in_detail_report(goods_name, begin_date, end_date, page, page_size)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-24 13:47:31,011 - tornado.access - ERROR - 500 GET /api/goodsStockInDetailReport?page=1&pageSize=10&beginDate=2020-12-1&endDate=2020-12-24&goodsName=%E6%B5%8B%E8%AF%95 (127.0.0.1) 18.95ms
+2020-12-24 14:18:49,543 - tornado.access - WARNING - 404 GET /api/goodsStockOutDetailReport?page=1&pageSize=10&beginDate=&endDate=&goodsName= (127.0.0.1) 0.00ms
+2020-12-24 14:24:23,615 - tornado.application - ERROR - Uncaught exception GET /api/goodsStockOutDetailReport?page=1&pageSize=10&beginDate=&endDate=&goodsName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/goodsStockOutDetailReport?page=1&pageSize=10&beginDate=&endDate=&goodsName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 68, in get
+    total_num, df_records = ChartModel.goods_stock_out_detail_report(goods_name, begin_date, end_date, page, page_size)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-24 14:24:23,623 - tornado.access - ERROR - 500 GET /api/goodsStockOutDetailReport?page=1&pageSize=10&beginDate=&endDate=&goodsName= (127.0.0.1) 30.92ms
+2020-12-24 14:25:20,524 - tornado.application - ERROR - Uncaught exception GET /api/goodsStockOutDetailReport?page=1&pageSize=10&beginDate=&endDate=&goodsName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/goodsStockOutDetailReport?page=1&pageSize=10&beginDate=&endDate=&goodsName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 68, in get
+    total_num, df_records = ChartModel.goods_stock_out_detail_report(goods_name, begin_date, end_date, page, page_size)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-24 14:25:20,525 - tornado.access - ERROR - 500 GET /api/goodsStockOutDetailReport?page=1&pageSize=10&beginDate=&endDate=&goodsName= (127.0.0.1) 13.96ms
+2020-12-24 15:31:41,057 - tornado.application - ERROR - Uncaught exception POST /api/sendMsg (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='POST', uri='/api/sendMsg', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\dd.py", line 27, in post
+    res = DDModel.send_message(user_id)
+  File "F:\workspace\fuli_back_end\giftapp\models\dd.py", line 70, in send_message
+    user_id = cls.get_user_id_by_staff_no(staff_no)
+  File "F:\workspace\fuli_back_end\giftapp\models\dd.py", line 228, in get_user_id_by_staff_no
+    goods_id, staff_no)
+NameError: name 'goods_id' is not defined
+2020-12-24 15:31:41,077 - tornado.access - ERROR - 500 POST /api/sendMsg (127.0.0.1) 229.39ms
+2020-12-24 15:36:48,487 - tornado.application - ERROR - Uncaught exception POST /api/sendMsg (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='POST', uri='/api/sendMsg', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\dd.py", line 27, in post
+    res = DDModel.send_message(user_id)
+  File "F:\workspace\fuli_back_end\giftapp\models\dd.py", line 71, in send_message
+    user_id = cls.get_user_id_by_staff_no(staff_no)
+  File "F:\workspace\fuli_back_end\giftapp\models\dd.py", line 230, in get_user_id_by_staff_no
+    df = pd.read_sql(total_count_sql, con=cls.conn_ss)
+NameError: name 'pd' is not defined
+2020-12-24 15:36:48,490 - tornado.access - ERROR - 500 POST /api/sendMsg (127.0.0.1) 192.49ms

@@ -13,6 +13,8 @@ from handlers import user as user_handlers
 from handlers import like as like_handlers
 from handlers import supply as supply_handlers
 from handlers import suggest as suggest_handlers
+from handlers import suggest as suggest_handlers
+from handlers import chart as chart_handlers
 from handlers.task import TaskHandler
 
 HANDLERS = [
@@ -48,13 +50,21 @@ HANDLERS = [
     # 用户相关
     (r"/api/getUserInfoNC", user_handlers.UserInfoHandler),
     (r"/api/getUserList", user_handlers.UserListHandler),
+    (r"/api/zBirthStaff", user_handlers.ZBirthUserListHandler),
     # 代领相关
     (r"/api/supply", supply_handlers.SupplyListHandler),
     (r"/api/cancelSupply", supply_handlers.SupplyStatusHandler),
     # 建议相关
     (r"/api/suggestDict", suggest_handlers.SuggestDictListHandler),
     (r"/api/suggest", suggest_handlers.SuggestListHandler),
-    (r"/api/suggestRecords", suggest_handlers.SuggestListHandler)
+    (r"/api/suggestRecords", suggest_handlers.SuggestListHandler),
+    # 报表相关
+    (r"/api/goodsStockReport", chart_handlers.GoodsStockHandler),
+    (r"/api/goodsStockInDetailReport", chart_handlers.GoodsStockInDetailHandler),
+    (r"/api/goodsStockOutDetailReport", chart_handlers.GoodsStockOutDetailHandler),
+    (r"/api/giftRecordReport", chart_handlers.GiftRecordHandler),
+    (r"/api/giftSumReport", chart_handlers.GiftSumReportHandler)
+
 ]
 
 logging.basicConfig(filename=f"./log/web.{time.strftime('%Y_%m_%d')}.txt",

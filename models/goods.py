@@ -30,7 +30,7 @@ class GoodsModel(object):
             # 获取商品记录明细
             if page and page_size:
                 min_top = (int(page) - 1) * int(page_size)
-                max_top = int(page) * int(page_size)
+                max_top = int(page_size)
                 records_sql = f'select top {max_top} * from goods LEFT JOIN (SELECT a.goods_id, SUM(a.num) num FROM (SELECT gscd.goods_id, gscd.change_type, CASE WHEN gscd.change_type = 1 THEN gscd.num WHEN gscd.change_type = 2 THEN 0-gscd.num ELSE 0 END as num FROM goods_stock_change_detail gscd WHERE gscd.status = 1) a GROUP BY a.goods_id) s ON id = s.goods_id LEFT JOIN(\
     SELECT l.goods_id as c_goods_id, COUNT(DISTINCT l.create_by) as likeStaffNum FROM [like] l WHERE l.status = 1 GROUP BY l.goods_id ) c on id = c.c_goods_id \
                     where id not in (select top {min_top} id from goods WHERE status {status_sql} {name_sql} order by create_time desc) AND status {status_sql} {name_sql} order by create_time desc'
@@ -155,7 +155,7 @@ class GoodsModel(object):
     def get_goods_stock(cls, page, page_size, goods_id):
 
         min_top = (int(page) - 1) * int(page_size)
-        max_top = int(page) * int(page_size)
+        max_top = int(page_size)
 
         # 获取商品库存明细总条数
         total_count_sql = "select COUNT(id) as totalNum from goods_stock_change_detail as gscd where gscd.status = 1 and gscd.goods_id = '%s'"%(goods_id)
@@ -244,6 +244,7 @@ class GoodsModel(object):
                         'num': num,
                         'change_des': '导入',
                         'create_by': staff_no,
+                        'price': price
                     }
                     base_sql = "insert into dbo.goods_stock_change_detail ({}) values ({})"
                     sql_item = []
@@ -256,7 +257,8 @@ class GoodsModel(object):
                         else:
                             sql_values.append(info[key])
                     sql = base_sql.format(','.join(sql_item), ','.join(list(map(str, sql_values))))
-
+                    print('库存插入')
+                    print(sql)
                     cursor.execute(sql)
                 else:
                     # 若不存在， 新增
@@ -291,6 +293,7 @@ class GoodsModel(object):
                     sql_values_stock = []
 
                     stock_info = {
+                        'price': price,
                         'goods_id': goods_id,
                         'num': num,
                         'change_des': '导入',
@@ -307,6 +310,8 @@ class GoodsModel(object):
                     sql_stock = base_sql_stock.format(','.join(sql_item_stock),
                                                       ','.join(list(map(str, sql_values_stock))))
 
+                    print('新增库存插入')
+                    print(sql_stock)
                     cursor.execute(sql_stock)
 
             cls.conn_ss.commit()

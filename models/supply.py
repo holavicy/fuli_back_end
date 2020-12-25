@@ -69,7 +69,7 @@ class SupplyModel(object):
         # 获取代领记录明细
         if page and page_size:
             min_top = (int(page) - 1) * int(page_size)
-            max_top = int(page) * int(page_size)
+            max_top = int(page_size)
             records_sql = f'select top {max_top} * from [others_supply] where id not in (select top {min_top} id from [others_supply] WHERE  status = 1 {staff_no_sql} {year_sql} {supply_staff_no_sql} order by create_time desc) AND status  = 1 {staff_no_sql} {year_sql} {supply_staff_no_sql} order by create_time desc'
             print(records_sql)
         else:

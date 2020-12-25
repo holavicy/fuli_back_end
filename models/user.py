@@ -4,6 +4,7 @@ import cx_Oracle
 import re
 import json
 import numpy as np
+from models.chart import ChartModel
 
 
 class UserModel(object):
@@ -37,6 +38,7 @@ class UserModel(object):
     and job.ismainjob = 'Y'\
     and job.lastflag = 'Y'\
     and ss.code = '%s'" % (code)
+            print(sql)
             df_records = pd.read_sql(sql, con=cls.db_nc)
             df_records = df_records.to_json(orient='records')
             print(df_records)
@@ -79,7 +81,16 @@ class UserModel(object):
             #     left join hi_psnjob job on ss.pk_psndoc = job.pk_psndoc left join org_dept dp on dp.pk_dept = job.pk_dept left join org_dept fdp on fdp.pk_dept = dp.pk_fatherorg \
             #     where job.endflag = 'N' and job.ismainjob = 'Y'and (dp.name in ('电商运营部')or fdp.name in ('广州研发中心')or ss.name in ('王署斌', '龚培春'))) " + staff_no_sql + name_sql + get_year_sql + " order by ss.code"
 
-            records_sql = f'select org.name as orgName, ss.name, ss.code, ss.birthdate,REGEXP_REPLACE (ss.birthdate,\'(\\d{{{4}}})-(\\d{{{2}}})-(\\d{{{2}}})\',\'{year}-\\2-\\3\') AS thisYearBitth, b.zzdate, dp.name, dp2.name as dp2name,{year} - (REGEXP_SUBSTR(ss.birthdate,\'(\d){{{4}}}\')) + 1 as age ' \
+            records_sql = f'select org.name as orgName, ' \
+                f'ss.name, ' \
+                f'ss.code, ' \
+                f'ss.birthdate,' \
+                f'REGEXP_REPLACE (ss.birthdate,\'(\\d{{{4}}})-(\\d{{{2}}})-(\\d{{{2}}})\',\'{year}-\\2-\\3\') AS thisYearBitth, ' \
+                f'b.zzdate, ' \
+                f'dp.name, ' \
+                f'dp2.name as dp2name,' \
+                f'{year} - (REGEXP_SUBSTR(ss.birthdate,\'(\d){{{4}}}\')) + 1 as age ,' \
+                f'ss.mobile, job.pk_dept ' \
                 f'from bd_psndoc ss ' \
                 f'inner join hi_psnjob job on ss.pk_psndoc = job.pk_psndoc ' \
                 f'inner join bd_psncl jt on jt.pk_psncl = job.pk_psncl ' \
@@ -114,6 +125,11 @@ class UserModel(object):
                 user_item['BIRTHDATE'] = row[3]
                 user_item['THISYEARBIRTH'] = row[4]
                 user_item['ZZDATE'] = row[5]
+                user_item['mobile'] = row[9]
+                user_item['group'] = row[0]
+
+                dept_list = ChartModel.get_dept_list(row[10], [])
+                user_item['dept_list'] = dept_list
 
                 user_item['isOthers'] = '否' # 是否已设置他人代领
 
@@ -163,6 +179,92 @@ class UserModel(object):
                     user_list = user_list + got_user_list
             else:
                 user_list = un_supply_user_list + un_confirm_user_list + un_got_user_list + got_user_list
+
+            total_num = len(user_list)
+
+            if page and page_size:
+                min_top = (int(page) - 1) * int(page_size)
+                max_top = int(page) * int(page_size)
+                user_list = user_list[min_top:max_top]
+
+            df = pd.DataFrame(user_list)
+            df = df.to_json(orient='records')
+
+            return total_num, df
+
+        except Exception as e:
+            print(e)
+
+    # 获取所有整生日的人员
+    @classmethod
+    def get_z_birth_user_list(cls, page, page_size, staff_no, name, get_year):
+
+        try:
+            staff_no_sql = ''
+            name_sql = ''
+
+            if staff_no:
+                staff_no_sql = f'AND ss.code = \'{staff_no}\''
+            if name:
+                name_sql = f'AND ss.name like \'%{name}%\''
+
+            template = re.compile(r"(\d{4})-(\d{2})-(\d{2})")
+            re.sub(template, r"\1-01-01", get_year)
+            year = re.sub(template, r"\1", get_year)
+
+            print(year)
+
+            records_sql = f'select org.name as orgName, ' \
+                f'ss.name, ' \
+                f'ss.code, ' \
+                f'ss.birthdate,' \
+                f'REGEXP_REPLACE (ss.birthdate,\'(\\d{{{4}}})-(\\d{{{2}}})-(\\d{{{2}}})\',\'{year}-\\2-\\3\') AS thisYearBitth, ' \
+                f'b.zzdate, ' \
+                f'dp.name, ' \
+                f'dp2.name as dp2name,' \
+                f'{year} - (REGEXP_SUBSTR(ss.birthdate,\'(\d){{{4}}}\')) + 1 as age ,' \
+                f'ss.mobile, job.pk_dept ' \
+                f'from bd_psndoc ss ' \
+                f'inner join hi_psnjob job on ss.pk_psndoc = job.pk_psndoc ' \
+                f'inner join bd_psncl jt on jt.pk_psncl = job.pk_psncl ' \
+                f'inner join (select job.pk_psndoc, min(job.begindate) as zzdate from hi_psnjob job join bd_psncl jt on job.pk_psncl = jt.pk_psncl where jt.name in (\'正式员工\',\'全职\',\'车间在职\', \'退休返聘\') group by job.pk_psndoc) b on ss.pk_psndoc = b.pk_psndoc ' \
+                f'left join org_dept dp on dp.pk_dept = job.pk_dept ' \
+                f'left join org_dept dp2 on dp.pk_fatherorg = dp2.pk_dept ' \
+                f'left join org_group og on dp.pk_group = og.pk_group ' \
+                f'left join org_orgs org on dp.pk_org = org.pk_org ' \
+                f'where job.endflag = \'N\' and job.ismainjob = \'Y\' ' \
+                f'and job.lastflag = \'Y\' ' \
+                f'and org.pk_org in (\'0001A31000000002DQ1F\', \'0001A31000000002ETZ6\', \'0001A31000000002FDIG\', \'0001V1100000002GOO1A\', \'0001V1100000002A7G5J\', \'0001A31000000002DQ2O\', \'0001A310000000074BK7\') ' \
+                f'and (dp2.name not in (\'广州研发中心\') or dp2.name is null ) ' \
+                f'and (dp.name not in (\'电商运营部\') or dp.name is null) ' \
+                f'and ss.name not in (\'王署斌\', \'龚培春\') ' \
+                f'and ss.name not like \'%测试%\' ' \
+                f'and jt.name in (\'正式员工\',\'全职\',\'车间在职\', \'试用期员工\', \'退休返聘\') ' \
+                f'and b.zzdate <= REGEXP_REPLACE (ss.birthdate,\'(\\d{{{4}}})-(\\d{{{2}}})-(\\d{{{2}}})\',\'{year}-\\2-\\3\') ' \
+                f'and mod({year}- (REGEXP_SUBSTR(ss.birthdate,\'(\\d){{{4}}}\')) + 1 , 10) = 0 ' \
+                f'{staff_no_sql}' \
+                f'{name_sql}' \
+                f'order by og.name, org.name, ss.code'
+
+            print(records_sql)
+
+            df_records = pd.read_sql(records_sql, con=cls.db_nc)
+            user_list = []
+            for index, row in df_records.iterrows():
+                staff_no = row[2]
+                user_item = {}
+                user_item['CODE'] = staff_no
+                user_item['NAME'] = row[1]
+                user_item['BIRTHDATE'] = row[3]
+                user_item['THISYEARBIRTH'] = row[4]
+                user_item['ZZDATE'] = row[5]
+                user_item['mobile'] = row[9]
+                user_item['group'] = row[0]
+
+                dept_list = ChartModel.get_dept_list(row[10], [])
+                user_item['dept_list'] = dept_list
+
+                user_list.append(user_item)
 
             total_num = len(user_list)
 

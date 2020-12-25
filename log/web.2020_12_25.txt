@@ -1,0 +1,367 @@
+2020-12-25 08:30:38,644 - tornado.application - ERROR - Uncaught exception GET /api/giftRecordReport?page=1&pageSize=10&year=&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/giftRecordReport?page=1&pageSize=10&year=&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 95, in get
+    total_num, df_records = ChartModel.gift_record(gift_name, year, page, page_size)
+TypeError: gift_record() takes 3 positional arguments but 5 were given
+2020-12-25 08:30:38,658 - tornado.access - ERROR - 500 GET /api/giftRecordReport?page=1&pageSize=10&year=&giftName= (127.0.0.1) 14.96ms
+2020-12-25 08:55:46,614 - tornado.application - ERROR - Uncaught exception GET /api/giftRecordReport?page=1&pageSize=5&year=&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/giftRecordReport?page=1&pageSize=5&year=&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 95, in get
+    total_num, df_records = ChartModel.gift_record(gift_name, year, page, page_size)
+TypeError: gift_record() takes 3 positional arguments but 5 were given
+2020-12-25 08:55:46,615 - tornado.access - ERROR - 500 GET /api/giftRecordReport?page=1&pageSize=5&year=&giftName= (127.0.0.1) 2.99ms
+2020-12-25 08:58:02,322 - tornado.application - ERROR - Uncaught exception GET /api/giftRecordReport?page=1&pageSize=10&year=&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/giftRecordReport?page=1&pageSize=10&year=&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 95, in get
+    total_num, df_records = ChartModel.gift_record(gift_name, year, page, page_size)
+TypeError: gift_record() takes 3 positional arguments but 5 were given
+2020-12-25 08:58:02,323 - tornado.access - ERROR - 500 GET /api/giftRecordReport?page=1&pageSize=10&year=&giftName= (127.0.0.1) 2.00ms
+2020-12-25 08:58:06,873 - tornado.application - ERROR - Uncaught exception GET /api/giftRecordReport?page=1&pageSize=10&year=&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/giftRecordReport?page=1&pageSize=10&year=&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 95, in get
+    total_num, df_records = ChartModel.gift_record(gift_name, year, page, page_size)
+TypeError: gift_record() takes 3 positional arguments but 5 were given
+2020-12-25 08:58:06,874 - tornado.access - ERROR - 500 GET /api/giftRecordReport?page=1&pageSize=10&year=&giftName= (127.0.0.1) 1.00ms
+2020-12-25 08:58:51,778 - tornado.application - ERROR - Uncaught exception GET /api/giftRecordReport?page=1&pageSize=10&year=&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/giftRecordReport?page=1&pageSize=10&year=&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 95, in get
+    total_num, df_records = ChartModel.gift_record(gift_name, year, page, page_size)
+TypeError: gift_record() takes 3 positional arguments but 5 were given
+2020-12-25 08:58:51,779 - tornado.access - ERROR - 500 GET /api/giftRecordReport?page=1&pageSize=10&year=&giftName= (127.0.0.1) 1.00ms
+2020-12-25 08:59:20,660 - tornado.application - ERROR - Uncaught exception GET /api/giftRecordReport?page=1&pageSize=10&year=Wed%20Jan%2001%202020%2000:00:00%20GMT+0800%20(%E4%B8%AD%E5%9B%BD%E6%A0%87%E5%87%86%E6%97%B6%E9%97%B4)&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/giftRecordReport?page=1&pageSize=10&year=Wed%20Jan%2001%202020%2000:00:00%20GMT+0800%20(%E4%B8%AD%E5%9B%BD%E6%A0%87%E5%87%86%E6%97%B6%E9%97%B4)&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 95, in get
+    total_num, df_records = ChartModel.gift_record(gift_name, year, page, page_size)
+TypeError: gift_record() takes 3 positional arguments but 5 were given
+2020-12-25 08:59:20,661 - tornado.access - ERROR - 500 GET /api/giftRecordReport?page=1&pageSize=10&year=Wed%20Jan%2001%202020%2000:00:00%20GMT+0800%20(%E4%B8%AD%E5%9B%BD%E6%A0%87%E5%87%86%E6%97%B6%E9%97%B4)&giftName= (127.0.0.1) 1.03ms
+2020-12-25 09:00:29,200 - tornado.application - ERROR - Uncaught exception GET /api/giftRecordReport?page=1&pageSize=10&year=&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/giftRecordReport?page=1&pageSize=10&year=&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 95, in get
+    total_num, df_records = ChartModel.gift_record(gift_name, year, page, page_size)
+TypeError: gift_record() takes 3 positional arguments but 5 were given
+2020-12-25 09:00:29,201 - tornado.access - ERROR - 500 GET /api/giftRecordReport?page=1&pageSize=10&year=&giftName= (127.0.0.1) 2.00ms
+2020-12-25 09:00:38,010 - tornado.application - ERROR - Uncaught exception GET /api/giftRecordReport?page=1&pageSize=10&year=Wed%20Jan%2001%202020%2000:00:00%20GMT+0800%20(%E4%B8%AD%E5%9B%BD%E6%A0%87%E5%87%86%E6%97%B6%E9%97%B4)&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/giftRecordReport?page=1&pageSize=10&year=Wed%20Jan%2001%202020%2000:00:00%20GMT+0800%20(%E4%B8%AD%E5%9B%BD%E6%A0%87%E5%87%86%E6%97%B6%E9%97%B4)&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 95, in get
+    total_num, df_records = ChartModel.gift_record(gift_name, year, page, page_size)
+TypeError: gift_record() takes 3 positional arguments but 5 were given
+2020-12-25 09:00:38,011 - tornado.access - ERROR - 500 GET /api/giftRecordReport?page=1&pageSize=10&year=Wed%20Jan%2001%202020%2000:00:00%20GMT+0800%20(%E4%B8%AD%E5%9B%BD%E6%A0%87%E5%87%86%E6%97%B6%E9%97%B4)&giftName= (127.0.0.1) 1.00ms
+2020-12-25 09:01:31,971 - tornado.application - ERROR - Uncaught exception GET /api/giftRecordReport?page=1&pageSize=10&year=&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/giftRecordReport?page=1&pageSize=10&year=&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 95, in get
+    total_num, df_records = ChartModel.gift_record(gift_name, year, page, page_size)
+TypeError: gift_record() takes 3 positional arguments but 5 were given
+2020-12-25 09:01:31,972 - tornado.access - ERROR - 500 GET /api/giftRecordReport?page=1&pageSize=10&year=&giftName= (127.0.0.1) 0.99ms
+2020-12-25 09:01:39,293 - tornado.application - ERROR - Uncaught exception GET /api/giftRecordReport?page=1&pageSize=10&year=&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/giftRecordReport?page=1&pageSize=10&year=&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 95, in get
+    total_num, df_records = ChartModel.gift_record(gift_name, year, page, page_size)
+TypeError: gift_record() takes 3 positional arguments but 5 were given
+2020-12-25 09:01:39,294 - tornado.access - ERROR - 500 GET /api/giftRecordReport?page=1&pageSize=10&year=&giftName= (127.0.0.1) 1.00ms
+2020-12-25 09:01:42,404 - tornado.application - ERROR - Uncaught exception GET /api/giftRecordReport?page=1&pageSize=10&year=2020&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/giftRecordReport?page=1&pageSize=10&year=2020&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 95, in get
+    total_num, df_records = ChartModel.gift_record(gift_name, year, page, page_size)
+TypeError: gift_record() takes 3 positional arguments but 5 were given
+2020-12-25 09:01:42,406 - tornado.access - ERROR - 500 GET /api/giftRecordReport?page=1&pageSize=10&year=2020&giftName= (127.0.0.1) 1.00ms
+2020-12-25 09:07:19,910 - tornado.application - ERROR - Uncaught exception GET /api/giftRecordReport?page=1&pageSize=10&year=2020&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/giftRecordReport?page=1&pageSize=10&year=2020&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "pymssql.pyx", line 448, in pymssql.Cursor.execute
+  File "_mssql.pyx", line 1064, in _mssql.MSSQLConnection.execute_query
+  File "_mssql.pyx", line 1095, in _mssql.MSSQLConnection.execute_query
+  File "_mssql.pyx", line 1228, in _mssql.MSSQLConnection.format_and_run_query
+  File "_mssql.pyx", line 1639, in _mssql.check_cancel_and_raise
+  File "_mssql.pyx", line 1683, in _mssql.maybe_raise_MSSQLDatabaseException
+_mssql.MSSQLDatabaseException: (102, b"Incorrect syntax near 'g'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1586, in execute
+    cur.execute(*args, **kwargs)
+  File "pymssql.pyx", line 465, in pymssql.Cursor.execute
+pymssql.ProgrammingError: (102, b"Incorrect syntax near 'g'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 95, in get
+    total_num, df_records = ChartModel.gift_record(gift_name, year, page, page_size)
+  File "F:\workspace\fuli_back_end\giftapp\models\chart.py", line 163, in gift_record
+    df_total_count = pd.read_sql(num_sql, con=cls.conn_ss)
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 412, in read_sql
+    chunksize=chunksize,
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1633, in read_query
+    cursor = self.execute(*args)
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1598, in execute
+    raise ex from exc
+pandas.io.sql.DatabaseError: Execution failed on sql 'SELECT count(*) as totalNum                    FROM [order] o                    INNER JOIN gifts g ON g.id = o.gift_id                    WHERE o.status = 4g.name like '%1%' and o.[year] = '10' 'ORDER BY o.finish_time DESC': (102, b"Incorrect syntax near 'g'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2020-12-25 09:07:19,937 - tornado.access - ERROR - 500 GET /api/giftRecordReport?page=1&pageSize=10&year=2020&giftName= (127.0.0.1) 37.43ms
+2020-12-25 09:08:50,460 - tornado.application - ERROR - Uncaught exception GET /api/giftRecordReport?page=1&pageSize=10&year=2020&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/giftRecordReport?page=1&pageSize=10&year=2020&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "pymssql.pyx", line 448, in pymssql.Cursor.execute
+  File "_mssql.pyx", line 1064, in _mssql.MSSQLConnection.execute_query
+  File "_mssql.pyx", line 1095, in _mssql.MSSQLConnection.execute_query
+  File "_mssql.pyx", line 1228, in _mssql.MSSQLConnection.format_and_run_query
+  File "_mssql.pyx", line 1639, in _mssql.check_cancel_and_raise
+  File "_mssql.pyx", line 1683, in _mssql.maybe_raise_MSSQLDatabaseException
+_mssql.MSSQLDatabaseException: (105, b"Unclosed quotation mark after the character string 'ORDER BY o.finish_time DESC'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1586, in execute
+    cur.execute(*args, **kwargs)
+  File "pymssql.pyx", line 468, in pymssql.Cursor.execute
+pymssql.OperationalError: (105, b"Unclosed quotation mark after the character string 'ORDER BY o.finish_time DESC'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 95, in get
+    total_num, df_records = ChartModel.gift_record(gift_name, year, page, page_size)
+  File "F:\workspace\fuli_back_end\giftapp\models\chart.py", line 163, in gift_record
+    df_total_count = pd.read_sql(num_sql, con=cls.conn_ss)
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 412, in read_sql
+    chunksize=chunksize,
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1633, in read_query
+    cursor = self.execute(*args)
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1598, in execute
+    raise ex from exc
+pandas.io.sql.DatabaseError: Execution failed on sql 'SELECT count(*) as totalNum                    FROM [order] o                    INNER JOIN gifts g ON g.id = o.gift_id                    WHERE o.status = 4and g.name like '%1%' and o.[year] = '10' 'ORDER BY o.finish_time DESC': (105, b"Unclosed quotation mark after the character string 'ORDER BY o.finish_time DESC'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2020-12-25 09:08:50,463 - tornado.access - ERROR - 500 GET /api/giftRecordReport?page=1&pageSize=10&year=2020&giftName= (127.0.0.1) 11.96ms
+2020-12-25 09:09:20,684 - tornado.application - ERROR - Uncaught exception GET /api/giftRecordReport?page=1&pageSize=10&year=2020&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/giftRecordReport?page=1&pageSize=10&year=2020&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "pymssql.pyx", line 448, in pymssql.Cursor.execute
+  File "_mssql.pyx", line 1064, in _mssql.MSSQLConnection.execute_query
+  File "_mssql.pyx", line 1095, in _mssql.MSSQLConnection.execute_query
+  File "_mssql.pyx", line 1228, in _mssql.MSSQLConnection.format_and_run_query
+  File "_mssql.pyx", line 1639, in _mssql.check_cancel_and_raise
+  File "_mssql.pyx", line 1683, in _mssql.maybe_raise_MSSQLDatabaseException
+_mssql.MSSQLDatabaseException: (105, b"Unclosed quotation mark after the character string 'ORDER BY o.finish_time DESC'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1586, in execute
+    cur.execute(*args, **kwargs)
+  File "pymssql.pyx", line 468, in pymssql.Cursor.execute
+pymssql.OperationalError: (105, b"Unclosed quotation mark after the character string 'ORDER BY o.finish_time DESC'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 95, in get
+    total_num, df_records = ChartModel.gift_record(gift_name, year, page, page_size)
+  File "F:\workspace\fuli_back_end\giftapp\models\chart.py", line 163, in gift_record
+    df_total_count = pd.read_sql(num_sql, con=cls.conn_ss)
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 412, in read_sql
+    chunksize=chunksize,
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1633, in read_query
+    cursor = self.execute(*args)
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1598, in execute
+    raise ex from exc
+pandas.io.sql.DatabaseError: Execution failed on sql 'SELECT count(*) as totalNum                    FROM [order] o                    INNER JOIN gifts g ON g.id = o.gift_id                    WHERE o.status = 4 and g.name like '%1%' and o.[year] = '10' 'ORDER BY o.finish_time DESC': (105, b"Unclosed quotation mark after the character string 'ORDER BY o.finish_time DESC'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2020-12-25 09:09:20,687 - tornado.access - ERROR - 500 GET /api/giftRecordReport?page=1&pageSize=10&year=2020&giftName= (127.0.0.1) 11.97ms
+2020-12-25 09:11:03,595 - tornado.application - ERROR - Uncaught exception GET /api/giftRecordReport?page=1&pageSize=10&year=2020&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/giftRecordReport?page=1&pageSize=10&year=2020&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "pymssql.pyx", line 448, in pymssql.Cursor.execute
+  File "_mssql.pyx", line 1064, in _mssql.MSSQLConnection.execute_query
+  File "_mssql.pyx", line 1095, in _mssql.MSSQLConnection.execute_query
+  File "_mssql.pyx", line 1228, in _mssql.MSSQLConnection.format_and_run_query
+  File "_mssql.pyx", line 1639, in _mssql.check_cancel_and_raise
+  File "_mssql.pyx", line 1683, in _mssql.maybe_raise_MSSQLDatabaseException
+_mssql.MSSQLDatabaseException: (8127, b'Column "order.finish_time" is invalid in the ORDER BY clause because it is not contained in either an aggregate function or the GROUP BY clause.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1586, in execute
+    cur.execute(*args, **kwargs)
+  File "pymssql.pyx", line 468, in pymssql.Cursor.execute
+pymssql.OperationalError: (8127, b'Column "order.finish_time" is invalid in the ORDER BY clause because it is not contained in either an aggregate function or the GROUP BY clause.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 95, in get
+    total_num, df_records = ChartModel.gift_record(gift_name, year, page, page_size)
+  File "F:\workspace\fuli_back_end\giftapp\models\chart.py", line 162, in gift_record
+    df_total_count = pd.read_sql(num_sql, con=cls.conn_ss)
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 412, in read_sql
+    chunksize=chunksize,
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1633, in read_query
+    cursor = self.execute(*args)
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1598, in execute
+    raise ex from exc
+pandas.io.sql.DatabaseError: Execution failed on sql 'SELECT count(*) as totalNum                    FROM [order] o                    INNER JOIN gifts g ON g.id = o.gift_id                    WHERE o.status = 4  and o.[year] = '2020' ORDER BY o.finish_time DESC': (8127, b'Column "order.finish_time" is invalid in the ORDER BY clause because it is not contained in either an aggregate function or the GROUP BY clause.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n')
+2020-12-25 09:11:03,598 - tornado.access - ERROR - 500 GET /api/giftRecordReport?page=1&pageSize=10&year=2020&giftName= (127.0.0.1) 12.96ms
+2020-12-25 09:12:47,708 - tornado.application - ERROR - Uncaught exception GET /api/giftRecordReport?page=1&pageSize=10&year=2020&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/giftRecordReport?page=1&pageSize=10&year=2020&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "pymssql.pyx", line 448, in pymssql.Cursor.execute
+  File "_mssql.pyx", line 1064, in _mssql.MSSQLConnection.execute_query
+  File "_mssql.pyx", line 1095, in _mssql.MSSQLConnection.execute_query
+  File "_mssql.pyx", line 1228, in _mssql.MSSQLConnection.format_and_run_query
+  File "_mssql.pyx", line 1639, in _mssql.check_cancel_and_raise
+  File "_mssql.pyx", line 1683, in _mssql.maybe_raise_MSSQLDatabaseException
+_mssql.MSSQLDatabaseException: (102, b"Incorrect syntax near '\\'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1586, in execute
+    cur.execute(*args, **kwargs)
+  File "pymssql.pyx", line 465, in pymssql.Cursor.execute
+pymssql.ProgrammingError: (102, b"Incorrect syntax near '\\'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 95, in get
+    total_num, df_records = ChartModel.gift_record(gift_name, year, page, page_size)
+  File "F:\workspace\fuli_back_end\giftapp\models\chart.py", line 188, in gift_record
+    df_records = pd.read_sql(sql, con=cls.conn_ss)
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 412, in read_sql
+    chunksize=chunksize,
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1633, in read_query
+    cursor = self.execute(*args)
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1598, in execute
+    raise ex from exc
+pandas.io.sql.DatabaseError: Execution failed on sql 'SELECT top 10 *                     from (SELECT o.id, o.[year], g.name, o.finished_by, o.finish_by_name                    FROM [order] o                    INNER JOIN gifts g ON g.id = o.gift_id                    WHERE o.status = 4 and o.[year] = '2020'  ) a                                WHERE a.gid not in (                                    SELECT top 0 b.gid from ( SELECT o.id, o.[year], g.name, o.finished_by, o.finish_by_name                    FROM [order] o                    INNER JOIN gifts g ON g.id = o.gift_id                    WHERE o.status = 4                                                                        and o.[year] = '2020' \) b order by b.create_time desc) order by a.create_time desc': (102, b"Incorrect syntax near '\\'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2020-12-25 09:12:47,710 - tornado.access - ERROR - 500 GET /api/giftRecordReport?page=1&pageSize=10&year=2020&giftName= (127.0.0.1) 18.95ms
+2020-12-25 09:19:51,388 - tornado.application - ERROR - Uncaught exception GET /api/giftRecordReport?page=1&pageSize=10&year=2020&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/giftRecordReport?page=1&pageSize=10&year=2020&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "pymssql.pyx", line 448, in pymssql.Cursor.execute
+  File "_mssql.pyx", line 1064, in _mssql.MSSQLConnection.execute_query
+  File "_mssql.pyx", line 1095, in _mssql.MSSQLConnection.execute_query
+  File "_mssql.pyx", line 1228, in _mssql.MSSQLConnection.format_and_run_query
+  File "_mssql.pyx", line 1639, in _mssql.check_cancel_and_raise
+  File "_mssql.pyx", line 1683, in _mssql.maybe_raise_MSSQLDatabaseException
+_mssql.MSSQLDatabaseException: (207, b"Invalid column name 'gid'.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1586, in execute
+    cur.execute(*args, **kwargs)
+  File "pymssql.pyx", line 465, in pymssql.Cursor.execute
+pymssql.ProgrammingError: (207, b"Invalid column name 'gid'.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 95, in get
+    total_num, df_records = ChartModel.gift_record(gift_name, year, page, page_size)
+  File "F:\workspace\fuli_back_end\giftapp\models\chart.py", line 185, in gift_record
+    df_records = pd.read_sql(sql, con=cls.conn_ss)
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 412, in read_sql
+    chunksize=chunksize,
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1633, in read_query
+    cursor = self.execute(*args)
+  File "D:\apps\python\lib\site-packages\pandas\io\sql.py", line 1598, in execute
+    raise ex from exc
+pandas.io.sql.DatabaseError: Execution failed on sql 'SELECT top 10 *                     from (SELECT o.id as oid, o.[year], g.name, o.finished_by, o.finish_by_name, o.finish_time                    FROM [order] o                    INNER JOIN gifts g ON g.id = o.gift_id                    WHERE o.status = 4 and o.[year] = '2020'  ) a                                WHERE a.oid not in (                                    SELECT top 0 b.gid from ( SELECT o.id as oid, o.[year], g.name, o.finished_by, o.finish_by_name, o.finish_time                    FROM [order] o                    INNER JOIN gifts g ON g.id = o.gift_id                    WHERE o.status = 4  and o.[year] = '2020' ) b order by b.finish_time desc) order by a.finish_time desc': (207, b"Invalid column name 'gid'.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2020-12-25 09:19:51,391 - tornado.access - ERROR - 500 GET /api/giftRecordReport?page=1&pageSize=10&year=2020&giftName= (127.0.0.1) 18.94ms
+2020-12-25 09:20:40,773 - tornado.application - ERROR - Uncaught exception GET /api/giftRecordReport?page=1&pageSize=10&year=2020&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/giftRecordReport?page=1&pageSize=10&year=2020&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 102, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not DataFrame
+2020-12-25 09:20:40,782 - tornado.access - ERROR - 500 GET /api/giftRecordReport?page=1&pageSize=10&year=2020&giftName= (127.0.0.1) 23.94ms
+2020-12-25 09:22:49,740 - tornado.application - ERROR - Uncaught exception GET /api/giftRecordReport?page=1&pageSize=10&year=2020&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/giftRecordReport?page=1&pageSize=10&year=2020&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 102, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not DataFrame
+2020-12-25 09:22:49,743 - tornado.access - ERROR - 500 GET /api/giftRecordReport?page=1&pageSize=10&year=2020&giftName= (127.0.0.1) 22.94ms
+2020-12-25 09:23:05,696 - tornado.application - ERROR - Uncaught exception GET /api/giftRecordReport?page=1&pageSize=10&year=&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/giftRecordReport?page=1&pageSize=10&year=&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\chart.py", line 102, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not DataFrame
+2020-12-25 09:23:05,698 - tornado.access - ERROR - 500 GET /api/giftRecordReport?page=1&pageSize=10&year=&giftName= (127.0.0.1) 131.68ms
+2020-12-25 15:34:28,382 - tornado.access - WARNING - 404 GET /api/giftSumReport?page=1&pageSize=10&year=&giftName= (127.0.0.1) 1.00ms
+2020-12-25 15:57:18,146 - tornado.application - ERROR - Uncaught exception GET /api/getUserList?page=1&pageSize=10&staffNo=&name=%E9%99%88%E6%98%8E%E5%A7%A3&getStatus=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getUserList?page=1&pageSize=10&staffNo=&name=%E9%99%88%E6%98%8E%E5%A7%A3&getStatus=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 42, in get
+    total_num, df_records = UserModel.get_user_list(page, page_size, staff_no, name, get_status, get_year)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-25 15:57:18,161 - tornado.access - ERROR - 500 GET /api/getUserList?page=1&pageSize=10&staffNo=&name=%E9%99%88%E6%98%8E%E5%A7%A3&getStatus=&getYear=2020-12-31 (127.0.0.1) 30.92ms
+2020-12-25 16:36:09,590 - tornado.application - ERROR - Uncaught exception GET /api/zBirthStaff?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/zBirthStaff?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 69, in get
+    total_num, df_records = UserModel.get_z_birth_user_list(page, page_size, staff_no, name, get_year)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-25 16:36:09,593 - tornado.access - ERROR - 500 GET /api/zBirthStaff?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1) 227.38ms

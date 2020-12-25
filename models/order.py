@@ -48,7 +48,7 @@ class OrderModel(object):
                 base_sql_order = 'insert into [order] ({}) values ({})'
                 sql_item_order, sql_values_order = format_sql_values(data)
                 sql_insert_order = base_sql_order.format(','.join(sql_item_order), ','.join(list(map(str, sql_values_order))))
-
+                print(sql_insert_order)
                 cursor.execute(sql_insert_order)
 
                 # 获取order.id
@@ -64,11 +64,12 @@ class OrderModel(object):
                         'goods_name': goods['name'],
                         'goods_image_url': goods['imageUrl'],
                         'goods_unit': goods['unit'],
-                        'goods_price': goods['price'],
+                        'goods_price': goods['price'], # 均价
                         'goods_is_must': goods['is_must']
                     }
 
                     stock_info = {
+                        'order_id': order_id,
                         'goods_id': goods['id'],
                         'change_type': 2,
                         'num': 1,
@@ -80,8 +81,7 @@ class OrderModel(object):
                     sql_item_relation, sql_values_relation = format_sql_values(relation_info)
                     sql_relation = base_sql_relation.format(','.join(sql_item_relation),
                                                             ','.join(list(map(str, sql_values_relation))))
-                    print('sql_relation')
-                    print('sql_relation')
+
                     cursor.execute(sql_relation)
                     # goods_stock_change_detial表中创建记录
 
@@ -100,12 +100,9 @@ class OrderModel(object):
                         all_out_num = goodsItem[5]
                         # 若用出库小于总入库，则说明此条入库记录要对应出库记录
                         if int(all_out_num) < int(all_in_num):
-                            price = 0
-                            if goodsItem[4] is not None:
-                                print('212121')
-                                price = goodsItem[4]
-
+                            price = goodsItem[4]
                             stock_info['price'] = price
+                            break
                     print(stock_info)
                     base_sql_stock = 'insert into dbo.goods_stock_change_detail ({}) values ({})'
                     sql_item_stock, sql_values_stock = format_sql_values(stock_info)
@@ -157,7 +154,7 @@ class OrderModel(object):
         # 获取订单记录明细
         if page and page_size:
             min_top = (int(page) - 1) * int(page_size)
-            max_top = int(page) * int(page_size)
+            max_top = int(page_size)
             records_sql = f'select top {max_top} * from [order] where id not in (select top {min_top} id from [order] WHERE  {status_sql} {staff_no_sql} {year_sql} {staff_name_sql} {creator_sql} {creator_name_sql} order by create_time desc) AND {status_sql} {staff_no_sql} {year_sql} {staff_name_sql} {creator_sql} {creator_name_sql} order by create_time desc'
         else:
             records_sql = f'select * from [order] WHERE {status_sql} {staff_no_sql} {year_sql} {staff_name_sql} {creator_sql} {creator_name_sql}'
@@ -210,6 +207,10 @@ class OrderModel(object):
                 update_sql = "update [order] set status = '%d', confirm_by = '%s', confirm_by_name = '%s', confirm_time = '%s' where id = '%s'" % (status, staff_no, staff_name, now, order_id)
             if status == 4 or status == 2:
                 update_sql = "update [order] set status = '%d', finished_by = '%s', finish_by_name = '%s', finish_time = '%s' where id = '%s'" % (status, staff_no, staff_name, now, order_id)
+            # 如果是取消订单，要将goods_stock_change_detial表中的相应记录状态置为2
+            if status == 2:
+                update_stock_sql = "update [goods_stock_change_detail] set status = 2, update_by = '%s', update_time = '%s' where order_id = '%s'" % (staff_no, now, order_id)
+                cursor.execute(update_stock_sql)
             cursor.execute(update_sql)
             cls.conn_ss.commit()
             cursor.close()
@@ -245,7 +246,7 @@ class OrderModel(object):
         # 获取订单记录明细
         if page and page_size:
             min_top = (int(page) - 1) * int(page_size)
-            max_top = int(page) * int(page_size)
+            max_top = int(page_size)
             records_sql = f'select top {max_top} * from [order] where id not in (select top {min_top} id from [order] WHERE {status_sql} {creator_sql} {year_sql} order by create_time desc) AND  {status_sql} {creator_sql} {year_sql} order by create_time desc'
             print(records_sql)
         else:
