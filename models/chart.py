@@ -20,6 +20,7 @@ class ChartModel(object):
         f'{ncDbInfo["user"]}/{ncDbInfo["password"]}@{ncDbInfo["host"]}:{ncDbInfo["port"]}/{ncDbInfo["db"]}',
         encoding="UTF-8", nencoding="UTF-8")
 
+    # 商品库存报表
     @classmethod
     def goods_stock_report(cls):
         sql = "SELECT g.id, g.name, ISNULL(a.allIn, 0) allIn, ISNULL(b.allOut, 0) allOut, ISNULL(a.allIn, 0) - ISNULL(b.allOut, 0) stock, g.price, ISNULL(a.allIn, 0) * g.price totalInAmount\

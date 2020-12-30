@@ -16,6 +16,7 @@ from handlers import suggest as suggest_handlers
 from handlers import suggest as suggest_handlers
 from handlers import chart as chart_handlers
 from handlers.task import TaskHandler
+from handlers import export as export_handlers
 
 HANDLERS = [
     # 商品相关
@@ -63,10 +64,17 @@ HANDLERS = [
     (r"/api/goodsStockInDetailReport", chart_handlers.GoodsStockInDetailHandler),
     (r"/api/goodsStockOutDetailReport", chart_handlers.GoodsStockOutDetailHandler),
     (r"/api/giftRecordReport", chart_handlers.GiftRecordHandler),
-    (r"/api/giftSumReport", chart_handlers.GiftSumReportHandler)
-
+    (r"/api/giftSumReport", chart_handlers.GiftSumReportHandler),
+    # 导出相关
+    (r"/api/exportGoods", export_handlers.ExportGoodsHandler),
+    (r"/api/exportChartGoods", export_handlers.ExportChartGoodsHandler),
+    (r"/api/exportGoodsStockInDetailReport", export_handlers.ExportGoodsStockInHandler),
+    (r"/api/exportGoodsStockOutDetailReport", export_handlers.ExportGoodsStockOutHandler),
+    (r"/api/exportGift", export_handlers.ExportGiftHandler),
+    (r"/api/exportGiftSum", export_handlers.ExportGiftSumHandler),
+    (r"/api/exportStaff", export_handlers.ExportStaffHandler),
+    (r"/api/exportZStaff", export_handlers.ExportZStaffHandler),
 ]
-
 logging.basicConfig(filename=f"./log/web.{time.strftime('%Y_%m_%d')}.txt",
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 

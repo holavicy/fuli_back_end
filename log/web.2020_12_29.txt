@@ -1,0 +1,99 @@
+2020-12-29 10:33:18,107 - tornado.application - ERROR - Uncaught exception GET /api/exportGift?year=&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGift?year=&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 99, in get
+    url = ExportModel.export_gift(gift_name, year)
+  File "F:\workspace\fuli_back_end\giftapp\models\export.py", line 208, in export_gift
+    goods_item['rowspan'] = true
+NameError: name 'true' is not defined
+2020-12-29 10:33:18,138 - tornado.access - ERROR - 500 GET /api/exportGift?year=&giftName= (127.0.0.1) 165.56ms
+2020-12-29 10:40:52,853 - tornado.application - ERROR - Uncaught exception GET /api/exportGift?year=&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGift?year=&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 99, in get
+    url = ExportModel.export_gift(gift_name, year)
+  File "F:\workspace\fuli_back_end\giftapp\models\export.py", line 212, in export_gift
+    goods_item['rowspan'] = true
+NameError: name 'true' is not defined
+2020-12-29 10:40:52,855 - tornado.access - ERROR - 500 GET /api/exportGift?year=&giftName= (127.0.0.1) 141.62ms
+2020-12-29 10:41:16,895 - tornado.application - ERROR - Uncaught exception GET /api/exportGift?year=&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGift?year=&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 99, in get
+    url = ExportModel.export_gift(gift_name, year)
+  File "F:\workspace\fuli_back_end\giftapp\models\export.py", line 212, in export_gift
+    goods_item['rowspan'] = true
+NameError: name 'true' is not defined
+2020-12-29 10:41:16,897 - tornado.access - ERROR - 500 GET /api/exportGift?year=&giftName= (127.0.0.1) 155.58ms
+2020-12-29 10:41:36,587 - tornado.application - ERROR - Uncaught exception GET /api/exportGift?year=&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGift?year=&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 99, in get
+    url = ExportModel.export_gift(gift_name, year)
+  File "F:\workspace\fuli_back_end\giftapp\models\export.py", line 214, in export_gift
+    goods_item['rowspan'] = true
+NameError: name 'true' is not defined
+2020-12-29 10:41:36,589 - tornado.access - ERROR - 500 GET /api/exportGift?year=&giftName= (127.0.0.1) 163.56ms
+2020-12-29 10:42:13,550 - tornado.application - ERROR - Uncaught exception GET /api/exportGift?year=&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGift?year=&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 99, in get
+    url = ExportModel.export_gift(gift_name, year)
+  File "F:\workspace\fuli_back_end\giftapp\models\export.py", line 215, in export_gift
+    goods_item['rowspan'] = true
+NameError: name 'true' is not defined
+2020-12-29 10:42:13,553 - tornado.access - ERROR - 500 GET /api/exportGift?year=&giftName= (127.0.0.1) 176.53ms
+2020-12-29 10:42:49,511 - tornado.application - ERROR - Uncaught exception GET /api/exportGift?year=&giftName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGift?year=&giftName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 99, in get
+    url = ExportModel.export_gift(gift_name, year)
+  File "F:\workspace\fuli_back_end\giftapp\models\export.py", line 216, in export_gift
+    goods_item['rowspan'] = true
+NameError: name 'true' is not defined
+2020-12-29 10:42:49,513 - tornado.access - ERROR - 500 GET /api/exportGift?year=&giftName= (127.0.0.1) 142.62ms
+2020-12-29 13:18:55,865 - tornado.application - ERROR - Uncaught exception GET /api/exportStaff?staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportStaff?staffNo=&name=&getStatus=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 140, in get
+    url = ExportModel.export_staff(staff_no, name, get_status, get_year)
+  File "F:\workspace\fuli_back_end\giftapp\models\export.py", line 341, in export_staff
+    total_num, df_records = UserModel.get_user_list('', '', staff_no, name, get_status, get_year)
+NameError: name 'UserModel' is not defined
+2020-12-29 13:18:55,868 - tornado.access - ERROR - 500 GET /api/exportStaff?staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1) 3.99ms
+2020-12-29 13:19:15,571 - tornado.application - ERROR - Uncaught exception GET /api/exportStaff?staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportStaff?staffNo=&name=&getStatus=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 140, in get
+    url = ExportModel.export_staff(staff_no, name, get_status, get_year)
+  File "F:\workspace\fuli_back_end\giftapp\models\export.py", line 342, in export_staff
+    total_num, df_records = UserModel.get_user_list('', '', staff_no, name, get_status, get_year)
+NameError: name 'UserModel' is not defined
+2020-12-29 13:19:15,573 - tornado.access - ERROR - 500 GET /api/exportStaff?staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1) 2.99ms
+2020-12-29 13:19:35,698 - tornado.application - ERROR - Uncaught exception GET /api/exportStaff?staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportStaff?staffNo=&name=&getStatus=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 140, in get
+    url = ExportModel.export_staff(staff_no, name, get_status, get_year)
+  File "F:\workspace\fuli_back_end\giftapp\models\export.py", line 342, in export_staff
+    total_num, df_records = UserModel.get_user_list('', '', staff_no, name, get_status, get_year)
+NameError: name 'UserModel' is not defined
+2020-12-29 13:19:35,702 - tornado.access - ERROR - 500 GET /api/exportStaff?staffNo=&name=&getStatus=&getYear=2020-12-31 (127.0.0.1) 4.99ms

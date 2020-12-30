@@ -1,0 +1,280 @@
+2020-12-28 13:44:58,815 - tornado.application - ERROR - Uncaught exception GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoods?goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 22, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not list
+2020-12-28 13:44:58,835 - tornado.access - ERROR - 500 GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1) 52.89ms
+2020-12-28 13:45:32,113 - tornado.application - ERROR - Uncaught exception GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoods?goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 22, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not list
+2020-12-28 13:45:32,115 - tornado.access - ERROR - 500 GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1) 19.95ms
+2020-12-28 13:46:06,237 - tornado.application - ERROR - Uncaught exception GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoods?goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 22, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not list
+2020-12-28 13:46:06,240 - tornado.access - ERROR - 500 GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1) 17.95ms
+2020-12-28 13:47:24,983 - tornado.application - ERROR - Uncaught exception GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoods?goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 22, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not list
+2020-12-28 13:47:24,984 - tornado.access - ERROR - 500 GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1) 10.97ms
+2020-12-28 13:48:12,746 - tornado.application - ERROR - Uncaught exception GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoods?goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 20, in get
+    df_records = ExportModel.export_goods(goods_name, goods_status)
+  File "F:\workspace\fuli_back_end\giftapp\models\export.py", line 28, in export_goods
+    print(json.loads(res))
+NameError: name 'json' is not defined
+2020-12-28 13:48:12,748 - tornado.access - ERROR - 500 GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1) 14.96ms
+2020-12-28 13:48:38,433 - tornado.application - ERROR - Uncaught exception GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoods?goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 20, in get
+    df_records = ExportModel.export_goods(goods_name, goods_status)
+  File "F:\workspace\fuli_back_end\giftapp\models\export.py", line 29, in export_goods
+    print(json.loads(res))
+NameError: name 'json' is not defined
+2020-12-28 13:48:38,435 - tornado.access - ERROR - 500 GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1) 14.96ms
+2020-12-28 13:49:02,620 - tornado.application - ERROR - Uncaught exception GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoods?goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 22, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not list
+2020-12-28 13:49:02,623 - tornado.access - ERROR - 500 GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1) 18.95ms
+2020-12-28 13:50:45,524 - tornado.application - ERROR - Uncaught exception GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoods?goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 20, in get
+    df_records = ExportModel.export_goods(goods_name, goods_status)
+  File "F:\workspace\fuli_back_end\giftapp\models\export.py", line 31, in export_goods
+    print(typeof(json.loads(res)))
+NameError: name 'typeof' is not defined
+2020-12-28 13:50:45,526 - tornado.access - ERROR - 500 GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1) 15.96ms
+2020-12-28 13:51:24,870 - tornado.application - ERROR - Uncaught exception GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoods?goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 20, in get
+    df_records = ExportModel.export_goods(goods_name, goods_status)
+  File "F:\workspace\fuli_back_end\giftapp\models\export.py", line 32, in export_goods
+    print(typeof(result_list))
+NameError: name 'typeof' is not defined
+2020-12-28 13:51:24,872 - tornado.access - ERROR - 500 GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1) 19.95ms
+2020-12-28 13:52:21,952 - tornado.application - ERROR - Uncaught exception GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoods?goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 22, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not list
+2020-12-28 13:52:21,954 - tornado.access - ERROR - 500 GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1) 14.96ms
+2020-12-28 13:54:58,509 - tornado.application - ERROR - Uncaught exception GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoods?goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 22, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not list
+2020-12-28 13:54:58,511 - tornado.access - ERROR - 500 GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1) 18.95ms
+2020-12-28 14:23:55,608 - tornado.application - ERROR - Uncaught exception GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoods?goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 20, in get
+    df_records = ExportModel.export_goods(goods_name, goods_status)
+  File "F:\workspace\fuli_back_end\giftapp\models\export.py", line 15, in export_goods
+    cls.write_excel(result_list)
+  File "F:\workspace\fuli_back_end\giftapp\models\export.py", line 35, in write_excel
+    sheet.write(row, col, res[row - 1][col])
+KeyError: 0
+2020-12-28 14:23:55,610 - tornado.access - ERROR - 500 GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1) 15.96ms
+2020-12-28 14:24:31,275 - tornado.application - ERROR - Uncaught exception GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoods?goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 22, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not list
+2020-12-28 14:24:31,277 - tornado.access - ERROR - 500 GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1) 13.96ms
+2020-12-28 14:24:59,204 - tornado.application - ERROR - Uncaught exception GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoods?goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 22, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not list
+2020-12-28 14:24:59,208 - tornado.access - ERROR - 500 GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1) 14.96ms
+2020-12-28 14:25:13,491 - tornado.application - ERROR - Uncaught exception GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoods?goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 22, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not list
+2020-12-28 14:25:13,493 - tornado.access - ERROR - 500 GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1) 30.92ms
+2020-12-28 14:25:39,980 - tornado.application - ERROR - Uncaught exception GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoods?goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 22, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not list
+2020-12-28 14:25:39,982 - tornado.access - ERROR - 500 GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1) 16.95ms
+2020-12-28 14:26:59,006 - tornado.application - ERROR - Uncaught exception GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoods?goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 22, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not list
+2020-12-28 14:26:59,008 - tornado.access - ERROR - 500 GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1) 18.95ms
+2020-12-28 14:32:39,500 - tornado.application - ERROR - Uncaught exception GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoods?goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 22, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not list
+2020-12-28 14:32:39,502 - tornado.access - ERROR - 500 GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1) 15.96ms
+2020-12-28 14:33:11,120 - tornado.application - ERROR - Uncaught exception GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoods?goodsName=&goodsStatus=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 22, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not list
+2020-12-28 14:33:11,124 - tornado.access - ERROR - 500 GET /api/exportGoods?goodsName=&goodsStatus= (127.0.0.1) 22.01ms
+2020-12-28 15:47:17,871 - tornado.application - ERROR - Uncaught exception GET /api/exportChartGoods (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportChartGoods', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 37, in get
+    url = ExportModel.export_chart_goods(goods_name, goods_status)
+NameError: name 'goods_name' is not defined
+2020-12-28 15:47:17,878 - tornado.access - ERROR - 500 GET /api/exportChartGoods (127.0.0.1) 6.98ms
+2020-12-28 15:47:30,927 - tornado.application - ERROR - Uncaught exception GET /api/exportChartGoods (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportChartGoods', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 37, in get
+    url = ExportModel.export_chart_goods(goods_name, goods_status)
+NameError: name 'goods_name' is not defined
+2020-12-28 15:47:30,929 - tornado.access - ERROR - 500 GET /api/exportChartGoods (127.0.0.1) 1.99ms
+2020-12-28 15:47:52,894 - tornado.application - ERROR - Uncaught exception GET /api/exportChartGoods (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportChartGoods', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 37, in get
+    url = ExportModel.export_chart_goods(goods_name, goods_status)
+NameError: name 'goods_name' is not defined
+2020-12-28 15:47:52,896 - tornado.access - ERROR - 500 GET /api/exportChartGoods (127.0.0.1) 1.99ms
+2020-12-28 15:48:11,273 - tornado.application - ERROR - Uncaught exception GET /api/exportChartGoods (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportChartGoods', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 37, in get
+    url = ExportModel.export_chart_goods(goods_name, goods_status)
+NameError: name 'goods_name' is not defined
+2020-12-28 15:48:11,275 - tornado.access - ERROR - 500 GET /api/exportChartGoods (127.0.0.1) 1.99ms
+2020-12-28 16:11:23,568 - tornado.application - ERROR - Uncaught exception GET /api/exportGoodsStockInDetailReport?beginDate=&endDate=&goodsName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoodsStockInDetailReport?beginDate=&endDate=&goodsName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 58, in get
+    url = ExportModel.goods_stock_in_detail_report(goods_name, begin_date, end_date)
+  File "F:\workspace\fuli_back_end\giftapp\models\export.py", line 90, in goods_stock_in_detail_report
+    total_num, res = ChartModel.goods_stock_in_detail_report(goods_name, begin_date, end_date)
+TypeError: goods_stock_in_detail_report() missing 2 required positional arguments: 'page' and 'page_size'
+2020-12-28 16:11:23,572 - tornado.access - ERROR - 500 GET /api/exportGoodsStockInDetailReport?beginDate=&endDate=&goodsName= (127.0.0.1) 3.99ms
+2020-12-28 16:11:46,715 - tornado.application - ERROR - Uncaught exception GET /api/exportGoodsStockInDetailReport?beginDate=&endDate=&goodsName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoodsStockInDetailReport?beginDate=&endDate=&goodsName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 58, in get
+    url = ExportModel.goods_stock_in_detail_report(goods_name, begin_date, end_date)
+  File "F:\workspace\fuli_back_end\giftapp\models\export.py", line 91, in goods_stock_in_detail_report
+    total_num, res = ChartModel.goods_stock_in_detail_report(goods_name, begin_date, end_date)
+TypeError: goods_stock_in_detail_report() missing 2 required positional arguments: 'page' and 'page_size'
+2020-12-28 16:11:46,716 - tornado.access - ERROR - 500 GET /api/exportGoodsStockInDetailReport?beginDate=&endDate=&goodsName= (127.0.0.1) 1.99ms
+2020-12-28 16:12:05,130 - tornado.application - ERROR - Uncaught exception GET /api/exportGoodsStockInDetailReport?beginDate=&endDate=&goodsName= (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/exportGoodsStockInDetailReport?beginDate=&endDate=&goodsName=', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\export.py", line 58, in get
+    url = ExportModel.goods_stock_in_detail_report(goods_name, begin_date, end_date)
+  File "F:\workspace\fuli_back_end\giftapp\models\export.py", line 91, in goods_stock_in_detail_report
+    total_num, res = ChartModel.goods_stock_in_detail_report(goods_name, begin_date, end_date)
+TypeError: goods_stock_in_detail_report() missing 2 required positional arguments: 'page' and 'page_size'
+2020-12-28 16:12:05,132 - tornado.access - ERROR - 500 GET /api/exportGoodsStockInDetailReport?beginDate=&endDate=&goodsName= (127.0.0.1) 2.99ms
