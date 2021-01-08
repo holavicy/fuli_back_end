@@ -108,6 +108,8 @@ class DDModel(object):
     def send_supply_message(cls, staff_no, msg):
         access_token = cls.get_access_token()
         user_id = cls.get_user_id_by_staff_no(staff_no)
+        print('user_id')
+        print(user_id)
 
         now = get_now()
 

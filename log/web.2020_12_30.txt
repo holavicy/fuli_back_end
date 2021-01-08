@@ -1,0 +1,66 @@
+2020-12-30 11:11:40,207 - tornado.application - ERROR - Uncaught exception GET /api/getUserInfo?code=01cb3d22d2a83a8aa98f684aa55b5028 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getUserInfo?code=01cb3d22d2a83a8aa98f684aa55b5028', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\dd.py", line 16, in get
+    user_info = DDModel.get_user_info(code, access_token)
+  File "F:\workspace\fuli_back_end\giftapp\models\dd.py", line 47, in get_user_info
+    raise TaskErr(1, response)
+common.tool.TaskErr: HttpErr at 1, msg:{'errcode': 60020, 'errmsg': '请参考FAQ：https://open-doc.dingtalk.com/microapp/faquestions/cvbtph。错误原因：访问ip不在白名单之中,request ip=223.104.145.52 appKey(dingfizsybn5gydpuost)'}
+2020-12-30 11:11:40,270 - tornado.access - ERROR - 500 GET /api/getUserInfo?code=01cb3d22d2a83a8aa98f684aa55b5028 (127.0.0.1) 1029.25ms
+2020-12-30 11:12:07,760 - tornado.application - ERROR - Uncaught exception GET /api/getUserInfoNC?code=100297 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getUserInfoNC?code=100297', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 21, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+2020-12-30 11:12:07,780 - tornado.access - ERROR - 500 GET /api/getUserInfoNC?code=100297 (127.0.0.1) 77.79ms
+2020-12-30 11:12:30,816 - tornado.application - ERROR - Uncaught exception GET /api/getUserInfoNC?code=100297 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getUserInfoNC?code=100297', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 21, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+2020-12-30 11:12:30,818 - tornado.access - ERROR - 500 GET /api/getUserInfoNC?code=100297 (127.0.0.1) 9.01ms
+2020-12-30 11:12:44,399 - tornado.application - ERROR - Uncaught exception GET /api/getUserInfoNC?code=100297 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getUserInfoNC?code=100297', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 21, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+2020-12-30 11:12:44,399 - tornado.access - ERROR - 500 GET /api/getUserInfoNC?code=100297 (127.0.0.1) 1.99ms
+2020-12-30 11:14:30,683 - tornado.application - ERROR - Uncaught exception GET /api/getUserInfoNC?code=100297 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getUserInfoNC?code=100297', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 21, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+2020-12-30 11:14:30,686 - tornado.access - ERROR - 500 GET /api/getUserInfoNC?code=100297 (127.0.0.1) 9.97ms
+2020-12-30 13:57:14,563 - tornado.application - ERROR - Uncaught exception GET /api/getUserInfoNC?code=100297 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/getUserInfoNC?code=100297', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 21, in get
+    'list': json.loads(df_records)
+  File "D:\apps\python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+2020-12-30 13:57:14,593 - tornado.access - ERROR - 500 GET /api/getUserInfoNC?code=100297 (127.0.0.1) 80.78ms

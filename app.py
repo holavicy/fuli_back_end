@@ -52,6 +52,7 @@ HANDLERS = [
     (r"/api/getUserInfoNC", user_handlers.UserInfoHandler),
     (r"/api/getUserList", user_handlers.UserListHandler),
     (r"/api/zBirthStaff", user_handlers.ZBirthUserListHandler),
+    (r"/api/huaMingCe", user_handlers.HuaMingCeHandler),
     # 代领相关
     (r"/api/supply", supply_handlers.SupplyListHandler),
     (r"/api/cancelSupply", supply_handlers.SupplyStatusHandler),
@@ -74,6 +75,7 @@ HANDLERS = [
     (r"/api/exportGiftSum", export_handlers.ExportGiftSumHandler),
     (r"/api/exportStaff", export_handlers.ExportStaffHandler),
     (r"/api/exportZStaff", export_handlers.ExportZStaffHandler),
+    (r"/api/exportHuaMingCe", export_handlers.ExportHMCHandler),
 ]
 logging.basicConfig(filename=f"./log/web.{time.strftime('%Y_%m_%d')}.txt",
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -85,7 +87,7 @@ sched = TornadoScheduler()
 # sched.add_job(TaskHandler.get_next_week_birth_user_id_list, 'interval', seconds = 5)
 
 # 每周五提醒未申请领取的员工及时申请领取
-# sched.add_job(TaskHandler.get_un_finish_user_list, 'cron', day_of_week='5', hour=9, minute=30, start_date='2021-01-01 00:00:00')
+# sched.add_job(TaskHandler.get_un_finish_user_list, 'cron', day_of_week='5', hour=10, minute=0, start_date='2021-01-01 00:00:00')
 # sched.add_job(TaskHandler.get_un_finish_user_list, 'interval', seconds = 14)
 
 sched.start()

@@ -1,0 +1,119 @@
+2020-12-31 14:41:16,371 - tornado.access - WARNING - 404 GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1) 1.00ms
+2020-12-31 14:44:44,480 - tornado.application - ERROR - Uncaught exception GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 96, in get
+    total_num, df_records = UserModel.hua_ming_ce(page, page_size)
+  File "F:\workspace\fuli_back_end\giftapp\models\user.py", line 326, in hua_ming_ce
+    df = pd.DataFrame(user_list)
+  File "D:\apps\python\lib\site-packages\pandas\core\frame.py", line 474, in __init__
+    arrays, columns = to_arrays(data, columns, dtype=dtype)
+  File "D:\apps\python\lib\site-packages\pandas\core\internals\construction.py", line 468, in to_arrays
+    data, columns, coerce_float=coerce_float, dtype=dtype
+  File "D:\apps\python\lib\site-packages\pandas\core\internals\construction.py", line 521, in _list_of_series_to_arrays
+    indexer = indexer_cache[id(index)] = index.get_indexer(columns)
+  File "D:\apps\python\lib\site-packages\pandas\core\indexes\base.py", line 2734, in get_indexer
+    "Reindexing only valid with uniquely valued Index objects"
+pandas.core.indexes.base.InvalidIndexError: Reindexing only valid with uniquely valued Index objects
+2020-12-31 14:44:44,536 - tornado.access - ERROR - 500 GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1) 13944.90ms
+2020-12-31 14:46:38,878 - tornado.application - ERROR - Uncaught exception GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 96, in get
+    total_num, df_records = UserModel.hua_ming_ce(page, page_size)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-31 14:46:38,881 - tornado.access - ERROR - 500 GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1) 13539.31ms
+2020-12-31 14:50:07,280 - tornado.application - ERROR - Uncaught exception GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 96, in get
+    total_num, df_records = UserModel.hua_ming_ce(page, page_size)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-31 14:50:07,282 - tornado.access - ERROR - 500 GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1) 13352.18ms
+2020-12-31 14:56:31,711 - tornado.application - ERROR - Uncaught exception GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 96, in get
+    total_num, df_records = UserModel.hua_ming_ce(page, page_size)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-31 14:56:31,713 - tornado.access - ERROR - 500 GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1) 11046.19ms
+2020-12-31 15:06:53,747 - tornado.application - ERROR - Uncaught exception GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 96, in get
+    total_num, df_records = UserModel.hua_ming_ce(page, page_size)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-31 15:06:53,750 - tornado.access - ERROR - 500 GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1) 2.99ms
+2020-12-31 15:07:36,692 - tornado.application - ERROR - Uncaught exception GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 96, in get
+    total_num, df_records = UserModel.hua_ming_ce(page, page_size)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-31 15:07:36,695 - tornado.access - ERROR - 500 GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1) 3.99ms
+2020-12-31 15:07:55,072 - tornado.application - ERROR - Uncaught exception GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 96, in get
+    total_num, df_records = UserModel.hua_ming_ce(page, page_size)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-31 15:07:55,075 - tornado.access - ERROR - 500 GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1) 2.99ms
+2020-12-31 15:10:14,005 - tornado.application - ERROR - Uncaught exception GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 96, in get
+    total_num, df_records = UserModel.hua_ming_ce(page, page_size)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-31 15:10:14,008 - tornado.access - ERROR - 500 GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1) 19.94ms
+2020-12-31 15:10:53,329 - tornado.application - ERROR - Uncaught exception GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 96, in get
+    total_num, df_records = UserModel.hua_ming_ce(page, page_size)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-31 15:10:53,331 - tornado.access - ERROR - 500 GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1) 18.52ms
+2020-12-31 15:11:20,280 - tornado.application - ERROR - Uncaught exception GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 96, in get
+    total_num, df_records = UserModel.hua_ming_ce(page, page_size)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-31 15:11:20,283 - tornado.access - ERROR - 500 GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1) 20.94ms
+2020-12-31 15:11:34,165 - tornado.application - ERROR - Uncaught exception GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 96, in get
+    total_num, df_records = UserModel.hua_ming_ce(page, page_size)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-31 15:11:34,166 - tornado.access - ERROR - 500 GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1) 17.95ms
+2020-12-31 15:19:55,010 - tornado.application - ERROR - Uncaught exception GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8082', method='GET', uri='/api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "D:\apps\python\lib\site-packages\tornado\web.py", line 1701, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "F:\workspace\fuli_back_end\giftapp\handlers\user.py", line 96, in get
+    total_num, df_records = UserModel.hua_ming_ce(page, page_size)
+TypeError: cannot unpack non-iterable NoneType object
+2020-12-31 15:19:55,018 - tornado.access - ERROR - 500 GET /api/huaMingCe?page=1&pageSize=10&staffNo=&name=&getYear=2020-12-31 (127.0.0.1) 74.80ms
