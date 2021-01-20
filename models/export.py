@@ -401,9 +401,9 @@ class ExportModel(object):
 
     # 整生日礼包人员统计报表
     @classmethod
-    def export_z_staff(cls, staff_no, name, get_year):
+    def export_z_staff(cls, staff_no, name, get_year, start_time, end_time):
         print(get_year)
-        total_num, df_records = UserModel.get_z_birth_user_list('', '', staff_no, name, get_year)
+        total_num, df_records = UserModel.get_z_birth_user_list('', '', staff_no, name, get_year, start_time, end_time)
         result_list = json.loads(df_records)
 
         template = re.compile(r"(\d{4})-(\d{2})-(\d{2})")

@@ -60,13 +60,15 @@ class ZBirthUserListHandler(BaseHandler):
         staff_no = self.get_argument('staffNo')
         name = self.get_argument('name')
         get_year = self.get_argument('getYear')
+        start_time = self.get_argument('startTime')
+        end_time = self.get_argument('endTime')
         response = {
             'code': 0,
             'data': '',
             'errorMsg': ''
         }
 
-        total_num, df_records = UserModel.get_z_birth_user_list(page, page_size, staff_no, name, get_year)
+        total_num, df_records = UserModel.get_z_birth_user_list(page, page_size, staff_no, name, get_year, start_time, end_time)
         if isinstance(total_num, int):
             total_num = total_num
         else:

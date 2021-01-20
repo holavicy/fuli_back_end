@@ -158,8 +158,10 @@ class ExportZStaffHandler(BaseHandler):
         staff_no = self.get_argument('staffNo')
         name = self.get_argument('name')
         get_year = self.get_argument('getYear')
+        start_time = self.get_argument('startTime')
+        end_time = self.get_argument('endTime')
 
-        url = ExportModel.export_z_staff(staff_no, name, get_year)
+        url = ExportModel.export_z_staff(staff_no, name, get_year, start_time, end_time)
         data = {
             'url': url
         }

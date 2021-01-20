@@ -198,22 +198,30 @@ class UserModel(object):
 
     # 获取所有整生日的人员
     @classmethod
-    def get_z_birth_user_list(cls, page, page_size, staff_no, name, get_year):
+    def get_z_birth_user_list(cls, page, page_size, staff_no, name, get_year, start_time, end_time):
 
         try:
-            staff_no_sql = ''
-            name_sql = ''
-
-            if staff_no:
-                staff_no_sql = f'AND ss.code = \'{staff_no}\''
-            if name:
-                name_sql = f'AND ss.name like \'%{name}%\''
-
             template = re.compile(r"(\d{4})-(\d{2})-(\d{2})")
             re.sub(template, r"\1-01-01", get_year)
             year = re.sub(template, r"\1", get_year)
 
             print(year)
+
+            staff_no_sql = ''
+            name_sql = ''
+            start_time_sql = ''
+            end_time_sql = ''
+
+            if staff_no:
+                staff_no_sql = f'AND ss.code = \'{staff_no}\''
+            if name:
+                name_sql = f'AND ss.name like \'%{name}%\''
+            if start_time:
+                start_time_sql = f'AND REGEXP_REPLACE (ss.birthdate,\'(\\d{{{4}}})-(\\d{{{2}}})-(\\d{{{2}}})\',\'{year}-\\2-\\3\')>=\'{start_time}\''
+            if end_time:
+                end_time_sql = f'AND REGEXP_REPLACE (ss.birthdate,\'(\\d{{{4}}})-(\\d{{{2}}})-(\\d{{{2}}})\',\'{year}-\\2-\\3\')<=\'{end_time}\''
+
+
 
             records_sql = f'select org.name as orgName, ' \
                 f'ss.name, ' \
@@ -245,6 +253,8 @@ class UserModel(object):
                 f'and mod({year}- (REGEXP_SUBSTR(ss.birthdate,\'(\\d){{{4}}}\')) + 1 , 10) = 0 ' \
                 f'{staff_no_sql}' \
                 f'{name_sql}' \
+                f'{start_time_sql}' \
+                f'{end_time_sql}' \
                 f'order by og.name, org.name, ss.code'
 
             print(records_sql)
