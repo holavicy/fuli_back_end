@@ -83,11 +83,13 @@ logging.basicConfig(filename=f"./log/web.{time.strftime('%Y_%m_%d')}.txt",
 sched = TornadoScheduler()
 
 # 每天提醒一周后过生日（未申请）的人可申请礼包
-# sched.add_job(TaskHandler.get_next_week_birth_user_id_list, 'cron', day='1-31', hour=9, minute=0, start_date='2021-01-01 00:00:00')
-# sched.add_job(TaskHandler.get_next_week_birth_user_id_list, 'interval', seconds = 5)
+sched.add_job(TaskHandler.get_next_week_birth_user_id_list, 'cron', day='1-31', hour=9, minute=0, start_date='2021-01-29 00:00:00', id='call_job1')
+# sched.add_job(TaskHandler.get_next_week_birth_user_id_list, 'interval', seconds = 30)
 
 # 每周五提醒未申请领取的员工及时申请领取
-# sched.add_job(TaskHandler.get_un_finish_user_list, 'cron', day_of_week='5', hour=10, minute=0, start_date='2021-01-01 00:00:00')
+# sched.add_job(TaskHandler.get_un_finish_user_list, 'cron', day='1-31', hour=16, minute=27, start_date='2021-01-01 00:00:00',id='call_job1')
+
+sched.add_job(TaskHandler.get_un_finish_user_list, 'cron', day_of_week='4', hour=10, minute=0, start_date='2021-01-29 00:00:00', id='call_job2')
 # sched.add_job(TaskHandler.get_un_finish_user_list, 'interval', seconds = 14)
 
 sched.start()

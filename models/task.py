@@ -56,7 +56,7 @@ class TaskModel(object):
                     f'and org.pk_org in (\'0001A31000000002DQ1F\', \'0001A31000000002ETZ6\', \'0001A31000000002FDIG\', \'0001V1100000002GOO1A\', \'0001V1100000002A7G5J\', \'0001A31000000002DQ2O\', \'0001A310000000074BK7\') ' \
                     f'and (dp2.name not in (\'广州研发中心\') or dp2.name is null ) ' \
                     f'and (dp.name not in (\'电商运营部\') or dp.name is null) ' \
-                    f'and ss.name not in (\'王署斌\', \'龚培春\') ' \
+                    f'and ss.name not in (\'王署斌\', \'龚培春\', \'施国斌\') ' \
                     f'and ss.name not like \'%测试%\' ' \
                     f'and jt.name in (\'正式员工\',\'全职\',\'车间在职\', \'试用期员工\', \'退休返聘\') ' \
                     f'and b.zzdate <= REGEXP_REPLACE (ss.birthdate,\'(\\d{{{4}}})-(\\d{{{2}}})-(\\d{{{2}}})\',\'{year}-\\2-\\3\') ' \
@@ -137,7 +137,7 @@ class TaskModel(object):
                     f'and org.pk_org in (\'0001A31000000002DQ1F\', \'0001A31000000002ETZ6\', \'0001A31000000002FDIG\', \'0001V1100000002GOO1A\', \'0001V1100000002A7G5J\', \'0001A31000000002DQ2O\', \'0001A310000000074BK7\') ' \
                     f'and (dp2.name not in (\'广州研发中心\') or dp2.name is null ) ' \
                     f'and (dp.name not in (\'电商运营部\') or dp.name is null) ' \
-                    f'and ss.name not in (\'王署斌\', \'龚培春\') ' \
+                    f'and ss.name not in (\'王署斌\', \'龚培春\', \'施国斌\') ' \
                     f'and ss.name not like \'%测试%\' ' \
                     f'and jt.name in (\'正式员工\',\'全职\',\'车间在职\', \'试用期员工\', \'退休返聘\') ' \
                     f'and b.zzdate <= REGEXP_REPLACE (ss.birthdate,\'(\\d{{{4}}})-(\\d{{{2}}})-(\\d{{{2}}})\',\'{year}-\\2-\\3\') ' \

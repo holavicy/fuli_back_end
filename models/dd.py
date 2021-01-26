@@ -76,7 +76,7 @@ class DDModel(object):
 
         url = cls.url + '/topapi/message/corpconversation/asyncsend_v2?access_token=' + access_token
         HEADERS = {'Content-Type': 'application/json'}
-        target_url = urllib.parse.quote('http://192.168.40.229:8081/gift/#/orderList')
+        target_url = urllib.parse.quote('http://222.186.81.36:8081/gift/#/orderList')
         print(target_url)
         data = {
             "agent_id": cls.agent_id,
@@ -115,7 +115,7 @@ class DDModel(object):
 
         url = cls.url + '/topapi/message/corpconversation/asyncsend_v2?access_token=' + access_token
         HEADERS = {'Content-Type': 'application/json'}
-        target_url = urllib.parse.quote('http://192.168.40.229:8081/gift')
+        target_url = urllib.parse.quote('http://222.186.81.36:8081/gift/')
         data = {
             "agent_id": cls.agent_id,
             "userid_list": user_id,
@@ -152,7 +152,7 @@ class DDModel(object):
 
         url = cls.url + '/topapi/message/corpconversation/asyncsend_v2?access_token=' + access_token
         HEADERS = {'Content-Type': 'application/json'}
-        target_url = urllib.parse.quote('http://192.168.40.229:8081/gift')
+        target_url = urllib.parse.quote('http://222.186.81.36:8081/gift/')
         data = {
             "agent_id": cls.agent_id,
             "userid_list": user_id,
