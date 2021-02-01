@@ -49,24 +49,9 @@ class UserModel(object):
 
     # 获取所有可领取生日礼包的人员
     @classmethod
-    def get_user_list(cls, page, page_size, staff_no, name, get_status, get_year):
+    def get_user_list(cls, page, page_size, staff_no, name, get_status, get_year, start_time, end_time):
 
         try:
-
-            staff_no_sql = ''
-            name_sql = ''
-            get_year_sql = ''
-            if staff_no:
-                staff_no_sql = f'AND ss.code = \'{staff_no}\''
-            if name:
-                name_sql = f'AND ss.name like \'%{name}%\''
-            if get_year:
-                get_year_sql = f'and b.zzdate <= \'{get_year}\''
-
-            un_supply_user_list = []  # 未申请
-            un_confirm_user_list = [] # 已申请待管理员确认
-            un_got_user_list = [] # 待领取
-            got_user_list = [] # 已领取
 
             template = re.compile(r"(\d{4})-(\d{2})-(\d{2})")
             re.sub(template, r"\1-01-01", get_year)
@@ -75,6 +60,29 @@ class UserModel(object):
             year = re.sub(template, r"\1", get_year)
 
             print(year)
+
+            staff_no_sql = ''
+            name_sql = ''
+            get_year_sql = ''
+            start_time_sql = ''
+            end_time_sql = ''
+            if staff_no:
+                staff_no_sql = f'AND ss.code = \'{staff_no}\''
+            if name:
+                name_sql = f'AND ss.name like \'%{name}%\''
+            if get_year:
+                get_year_sql = f'and b.zzdate <= \'{get_year}\''
+            if start_time:
+                start_time_sql = f'AND REGEXP_REPLACE (ss.birthdate,\'(\\d{{{4}}})-(\\d{{{2}}})-(\\d{{{2}}})\',\'{year}-\\2-\\3\')>=\'{start_time}\''
+            if end_time:
+                end_time_sql = f'AND REGEXP_REPLACE (ss.birthdate,\'(\\d{{{4}}})-(\\d{{{2}}})-(\\d{{{2}}})\',\'{year}-\\2-\\3\')<=\'{end_time}\''
+
+            un_supply_user_list = []  # 未申请
+            un_confirm_user_list = [] # 已申请待管理员确认
+            un_got_user_list = [] # 待领取
+            got_user_list = [] # 已领取
+
+
 
             # records_sql = "select ss.pk_psndoc, ss.code, ss.name, ss.birthdate, b.zzdate from (select ss.pk_psndoc from bd_psndoc ss inner join hi_psnjob job on job.pk_psndoc = ss.pk_psndoc inner join bd_psncl jt on jt.pk_psncl = job.pk_psncl where ss.enablestate = 2 and job.endflag = 'N' and job.poststat = 'Y' and jt.name in ('正式员工','全职','车间在职', '试用期员工', '退休返聘') group by ss.pk_psndoc, ss.name having ss.name not like '%测试%') a join ( \
             #     select job.pk_psndoc, min(job.begindate) as zzdate from hi_psnjob job join bd_psncl jt on job.pk_psncl = jt.pk_psncl where jt.name in ('正式员工','全职','车间在职', '退休返聘') group by job.pk_psndoc) b on a.pk_psndoc = b.pk_psndoc \
@@ -112,6 +120,8 @@ class UserModel(object):
                 f'and mod({year}- (REGEXP_SUBSTR(ss.birthdate,\'(\\d){{{4}}}\')) + 1 , 10) != 0 ' \
                 f'{staff_no_sql}' \
                 f'{name_sql}' \
+                f'{start_time_sql}' \
+                f'{end_time_sql}' \
                 f'order by og.name, org.name, ss.code'
 
             print(records_sql)
