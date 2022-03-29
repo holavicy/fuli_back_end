@@ -34,7 +34,7 @@ class UserModel(object):
       select a.clerkcode, min(a.begindate) as hiredate \
       from hi_psnjob a \
       left join bd_psncl b on a.pk_psncl = b.pk_psncl \
-      where b.name = '全职' group by a.clerkcode) c on c.clerkcode = ss.code \
+      where b.name in ('正式员工','全职','车间在职', '退休返聘') group by a.clerkcode) c on c.clerkcode = ss.code \
     where job.endflag = 'N'\
     and job.ismainjob = 'Y'\
     and job.lastflag = 'Y'\

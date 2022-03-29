@@ -58,7 +58,7 @@ class TaskHandler(object):
             if got_num == 0:
                 msg = '您今年的生日礼包已可以申请，请尽快登录系统申请您的生日礼包！'
             else:
-                msg = '您今年的生日礼包已可以领取，请于周五下午3-5点前往集团大楼4楼409联系福利专员领取！'
+                msg = '您今年的生日礼包已可以领取，请于周五下午3-5点前往集团大楼4楼405联系福利专员领取！'
             print(msg)
             DDModel.send_birth_message(user_id, msg)
             is_others = user['isOthers']

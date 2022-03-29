@@ -59,6 +59,8 @@ class DDModel(object):
         )
 
         response = response.json()
+        if response.get('errcode') != 0:
+            raise TaskErr(1, response)
         return response
 
     '''
